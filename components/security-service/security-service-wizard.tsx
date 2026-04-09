@@ -27,7 +27,11 @@ function progressForStep(step: number) {
   return 12 + ((step - 1) / (wizardTotalSteps - 1)) * 83;
 }
 
-export function SecurityServiceWizard() {
+type SecurityServiceWizardProps = {
+  onClose?: () => void;
+};
+
+export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -58,7 +62,7 @@ export function SecurityServiceWizard() {
         <SecurityServiceWizardShell
           title={step.title}
           subtitle={step.subtitle}
-          onClose={() => router.push("/")}
+          onClose={onClose ?? (() => router.push("/"))}
           showProgress={false}
         >
           <></>
@@ -68,7 +72,7 @@ export function SecurityServiceWizard() {
           progress={progress}
           title={step.title}
           subtitle={step.kind === "input" ? step.subtitle : undefined}
-          onClose={() => router.push("/")}
+          onClose={onClose ?? (() => router.push("/"))}
           actions={
             <>
               <button
