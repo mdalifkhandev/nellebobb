@@ -53,7 +53,7 @@ export function SecurityServiceWizard() {
         : "Next";
 
   return (
-    <div className="flex min-h-[calc(100svh-3rem)] items-center justify-center">
+    <div className="mx-auto w-full max-w-[728px]">
       {step.kind === "success" ? (
         <SecurityServiceWizardShell
           title={step.title}
