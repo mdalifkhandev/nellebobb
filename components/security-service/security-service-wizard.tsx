@@ -56,10 +56,10 @@ export function SecurityServiceWizard() {
     <div className="flex min-h-[calc(100svh-3rem)] items-center justify-center">
       {step.kind === "success" ? (
         <SecurityServiceWizardShell
-          progress={progress}
           title={step.title}
           subtitle={step.subtitle}
           onClose={() => router.push("/")}
+          showProgress={false}
         >
           <></>
         </SecurityServiceWizardShell>

@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 import { CloseIcon } from "./security-service-icons";
 
 type WizardShellProps = {
-  progress: number;
+  progress?: number;
   title: string;
   subtitle?: string;
   children: ReactNode;
   actions?: ReactNode;
   onClose: () => void;
+  showProgress?: boolean;
 };
 
 export function SecurityServiceWizardShell({
@@ -18,16 +19,21 @@ export function SecurityServiceWizardShell({
   children,
   actions,
   onClose,
+  showProgress = true,
 }: WizardShellProps) {
   return (
     <section className="relative w-full max-w-[728px] rounded-[24px] bg-white px-4 py-4 shadow-[0_16px_50px_rgba(15,23,42,0.08)] sm:px-6 sm:py-6">
       <div className="flex items-start gap-3">
-        <div className="mt-2 h-4 flex-1 overflow-hidden rounded-full bg-[#e1effe]">
-          <div
-            className="h-full rounded-full bg-[#015555]"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+        {showProgress ? (
+          <div className="mt-2 h-4 flex-1 overflow-hidden rounded-full bg-[#e1effe]">
+            <div
+              className="h-full rounded-full bg-[#015555]"
+              style={{ width: `${progress ?? 0}%` }}
+            />
+          </div>
+        ) : (
+          <div className="flex-1" />
+        )}
         <button
           type="button"
           onClick={onClose}
