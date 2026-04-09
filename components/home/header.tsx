@@ -15,15 +15,16 @@ export function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href="#"
-              className="inline-flex h-9 items-center justify-center rounded-lg bg-slate-800 px-4 text-xs font-bold text-white transition hover:bg-slate-700"
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-slate-800 px-4 text-xs font-bold !text-white transition hover:bg-slate-700"
             >
               Sign Up
             </a>
             <a
               href="#"
-              className="inline-flex h-9 items-center justify-center rounded-lg bg-[linear-gradient(149deg,#0ba8dd_4%,#60d8ff_28%,#0ba8dd_56%)] px-4 text-xs font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition hover:brightness-105"
+              className="group relative inline-flex h-9 items-center justify-center overflow-hidden rounded-lg bg-[linear-gradient(149deg,#0ba8dd_4%,#60d8ff_28%,#0ba8dd_56%)] px-4 text-xs font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition hover:brightness-105"
             >
-              Login
+              <span className="pointer-events-none absolute inset-y-0 left-[-18%] w-[26%] skew-x-[-24deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.75)_50%,transparent_100%)] opacity-90 transition-transform duration-500 ease-out group-hover:translate-x-[320%]" />
+              <span className="relative z-10">Login</span>
             </a>
           </div>
         </div>
@@ -46,15 +47,16 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="#"
-            className="inline-flex h-10 items-center justify-center rounded-lg bg-slate-800 px-5 text-sm font-bold text-white transition hover:bg-slate-700"
+            className="inline-flex h-10 items-center justify-center rounded-lg bg-slate-800 px-5 text-sm font-bold !text-white transition hover:bg-slate-700"
           >
             Sign Up
           </a>
           <a
             href="#"
-            className="inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(149deg,#0ba8dd_4%,#60d8ff_28%,#0ba8dd_56%)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition hover:brightness-105"
+            className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[linear-gradient(149deg,#0ba8dd_4%,#60d8ff_28%,#0ba8dd_56%)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition hover:brightness-105"
           >
-            Login
+            <span className="pointer-events-none absolute inset-y-0 left-[-18%] w-[26%] skew-x-[-24deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.75)_50%,transparent_100%)] opacity-90 transition-transform duration-500 ease-out group-hover:translate-x-[320%]" />
+            <span className="relative z-10">Login</span>
           </a>
         </div>
       </div>

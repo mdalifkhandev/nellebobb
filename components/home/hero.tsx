@@ -2,24 +2,30 @@ import { heroAccent, heroIllustration } from "./home-data";
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-7xl items-stretch lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="relative overflow-hidden bg-[#015555] px-4 py-12 text-[#e6e6e6] sm:px-8 sm:py-16 lg:px-16 lg:py-24">
-          <div className="absolute left-24 top-8 hidden h-10 w-28 opacity-80 lg:block">
-            <img src={heroAccent} alt="" className="h-full w-full object-contain" />
+    <section id="top" className="relative isolate overflow-hidden bg-[#015c5b]">
+      <div className="bg-[#015c5b] mx-auto grid min-h-125 max-w-360 items-stretch lg:grid-cols-[1.08fr_0.92fr]">
+        {/* Left side content area: headline, subtext, and search form */}
+        <div className="relative overflow-hidden bg-[#015c5b] px-6 py-14 text-[#f1f4f4] sm:px-10 sm:py-16 lg:px-14 lg:py-24 xl:px-16">
+          <div className="absolute left-24 top-10 hidden h-10 w-28 opacity-80 lg:block">
+            {/* <img src={heroAccent} alt="" className="h-full w-full object-contain" /> */}
           </div>
 
-          <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
-            <h1 className="font-[family-name:var(--font-poppins)] text-3xl font-semibold tracking-[-0.01em] sm:text-5xl lg:text-[3.85rem] lg:leading-[1.05]">
+          <div className="mx-auto flex min-h-full max-w-135 flex-col justify-center text-center lg:mx-0 lg:text-left">
+            <h1 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[1] tracking-[0] align-middle sm:text-[32px] lg:max-w-125 lg:text-[46px]">
               Find the best
               <br />
-              professionals in the BVI
+              professionals in
+              {/* <span className="inline-block bg-[#26b4ed] px-1.5 py-0.5 text-white">
+                
+              </span> */}{" "}
+              the BVI
             </h1>
-            <p className="mt-4 text-sm leading-7 text-[#e6e6e6]/95 sm:mt-5 sm:text-lg">
+            <p className="mt-4 text-base leading-7 text-[#e6e6e6]/95 sm:mt-5 sm:text-[1.1rem]">
               Get free quotes within minutes
             </p>
 
-            <form className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            {/* Form stacks on small screens and aligns horizontally from `sm` and up */}
+            <form className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
               <label className="sr-only" htmlFor="service-search">
                 What service are you looking for?
               </label>
@@ -27,31 +33,31 @@ export function Hero() {
                 id="service-search"
                 name="service-search"
                 placeholder="What service are you looking for?"
-                className="h-11 min-w-0 w-full flex-1 rounded-md border-2 border-[#e6e7ec] bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0ba8dd] sm:h-12 sm:max-w-[304px]"
+                className="h-11.5 min-w-0 w-full flex-1 rounded-sm border border-[#d7dbe2] bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-[#9ba3af] focus:border-[#0ba8dd] sm:h-[48px] sm:max-w-[310px]"
               />
               <button
                 type="submit"
-                className="inline-flex h-11 items-center justify-center rounded-md bg-[linear-gradient(158deg,#0ba8dd_4%,#60d8ff_28%,#0ba8dd_56%)] px-8 font-[family-name:var(--font-public-sans)] text-sm font-bold tracking-[0.14em] text-white shadow-[0_10px_22px_-16px_rgba(0,0,0,0.45)] transition hover:translate-y-[-1px] hover:brightness-105 sm:h-12"
+                className="group relative inline-flex h-11.5 min-w-46.5 items-center justify-center overflow-hidden rounded-md bg-[linear-gradient(135deg,#16aee0_0%,#12a7da_45%,#109fd1_100%)] px-8 font-(family-name:--font-public-sans) text-sm font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition-all duration-300 hover:translate-y-[-1px] hover:brightness-105 sm:h-[48px]"
               >
-                Search
+                <span className="pointer-events-none absolute inset-y-0 left-[-8%] w-[40%] skew-x-[-60deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.75)_50%,transparent_100%)] opacity-90 transition-transform duration-500 ease-out group-hover:translate-x-[200%]" />
+                <span className="relative z-10">Search</span>
               </button>
             </form>
 
-            <p className="mx-auto mt-6 max-w-lg text-sm leading-7 text-[#e6e6e6]/90 sm:text-base lg:mx-0">
+            <p className="mx-auto mt-5 max-w-lg text-sm leading-7 text-[#edf4f4]/90 sm:text-base lg:mx-0">
               Popular: Security service, Process Service, Search, Legal Service
             </p>
           </div>
         </div>
 
-        <div className="relative flex justify-center bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-4 lg:py-16">
-          <div className="relative aspect-square w-full max-w-[640px] overflow-hidden rounded-[28px] bg-gradient-to-br from-[#eaf7ff] via-white to-[#eef8ff] shadow-[0_24px_70px_-36px_rgba(15,23,42,0.45)] sm:aspect-[4/3] sm:min-h-[420px] lg:aspect-auto lg:h-[520px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(11,168,221,0.15),transparent_28%),radial-gradient(circle_at_78%_12%,rgba(15,118,110,0.12),transparent_22%),radial-gradient(circle_at_52%_74%,rgba(11,168,221,0.12),transparent_24%)]" />
-            <img
+        {/* Right side visual area: illustration framed with soft background gradients */}
+        <div className="relative flex items-center justify-center overflow-hidden bg-white px-5 py-8 sm:px-6 sm:py-10 lg:px-2 lg:py-0">
+          
+          <img
               src={heroIllustration}
               alt="Person holding a phone with service bubbles"
-              className="relative z-10 h-full w-full object-contain object-center p-3 sm:p-4 lg:p-3"
+              className="relative z-10 h-195 w-full object-contain object-center p-2 sm:p-3 lg:p-0"
             />
-          </div>
         </div>
       </div>
     </section>
