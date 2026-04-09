@@ -1,0 +1,36 @@
+type IconProps = {
+  className?: string;
+};
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 18 18"
+      fill="none"
+      className={className}
+    >
+      <path d="M4 4L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 4L4 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function LocationPinIcon({ className }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 18 22"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M9 20.25C9 20.25 16.5 13.392 16.5 8.25C16.5 4.10786 13.1421 0.75 9 0.75C4.85786 0.75 1.5 4.10786 1.5 8.25C1.5 13.392 9 20.25 9 20.25Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <circle cx="9" cy="8.25" r="2.25" fill="currentColor" />
+    </svg>
+  );
+}
+
