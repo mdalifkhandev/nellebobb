@@ -1,12 +1,19 @@
-import { starStrip } from "./security-service-data";
 import { reviews } from "./security-service-data";
+
+function StarIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4 fill-[#f6a800]">
+      <path d="M10 1.5l2.59 5.25 5.79.84-4.19 4.08.99 5.76L10 14.7l-5.18 2.73.99-5.76L1.62 7.59l5.79-.84L10 1.5z" />
+    </svg>
+  );
+}
 
 export function ReviewSection() {
   return (
-    <section className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+      <div className="mx-auto max-w-[1200px]">
         <div className="text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] text-[clamp(1.9rem,4vw,3rem)] font-semibold text-[#015555]">
+          <h2 className="font-[family-name:var(--font-poppins)] text-[clamp(1.85rem,4vw,2.9rem)] font-semibold leading-tight text-[#015555]">
             Review
           </h2>
           <p className="mt-3 text-sm text-[#3a3a3a] sm:text-[18px]">
@@ -14,30 +21,36 @@ export function ReviewSection() {
           </p>
         </div>
 
-        <div className="mt-8 space-y-3">
+        <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
           {reviews.map((review) => (
             <article key={review.name} className="rounded-[16px] bg-white p-5 shadow-sm sm:p-6">
-              <div className="flex items-start justify-between gap-3 sm:gap-4">
-                <div className="flex gap-3">
-                  <img src={review.avatar} alt={review.name} className="h-9 w-9 rounded-full object-cover" />
-                  <div>
-                    <p className="font-[family-name:var(--font-poppins)] text-sm font-semibold text-[#0a0a0a]">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <img src={review.avatar} alt={review.name} className="h-10 w-10 rounded-full object-cover sm:h-11 sm:w-11" />
+                  <div className="pt-0.5">
+                    <p className="font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-[#111111] sm:text-base">
                       {review.name}
                     </p>
-                    <img src={starStrip} alt="" className="mt-1 h-3 w-auto" />
+                    <div className="mt-1 flex items-center gap-0.5">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <StarIcon key={index} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <span className="text-xs text-[#333]">{review.date}</span>
+                <span className="shrink-0 pt-1 text-sm text-[#333]">{review.date}</span>
               </div>
-              <p className="mt-4 text-[12px] leading-6 text-[#333] sm:text-[13px]">{review.text}</p>
+              <p className="mt-4 max-w-[1080px] text-[13px] leading-6 text-[#333] sm:text-[14px] sm:leading-7">
+                {review.text}
+              </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center sm:mt-12">
           <a
             href="#"
-            className="inline-flex h-10 items-center justify-center rounded-[8px] bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-[family-name:var(--font-public-sans)] text-xs font-bold text-white sm:text-[14px]"
+            className="inline-flex h-11 w-full max-w-[420px] items-center justify-center rounded-[8px] bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-[family-name:var(--font-public-sans)] text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
           >
             Get Quotes from Security Services
           </a>

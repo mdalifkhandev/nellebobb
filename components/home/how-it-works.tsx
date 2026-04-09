@@ -10,8 +10,6 @@ import { SecurityServicePreviewModal } from "./security-service-preview-modal";
 const iconMap = [SearchIcon, MailIcon, PlayIcon];
 
 export function HowItWorks() {
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const securityService = serviceImages.find((service) => service.title === "Security Service");
 
   return (
     <>
@@ -53,19 +51,12 @@ export function HowItWorks() {
           </p>
           <button
             type="button"
-            onClick={() => setPreviewOpen(true)}
             className="mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-[8px] bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-[family-name:var(--font-public-sans)] text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
           >
             Get Quotes from Security Services
           </button>
         </div>
       </section>
-
-      <SecurityServicePreviewModal
-        open={previewOpen}
-        imageSrc={securityService?.src ?? ""}
-        onClose={() => setPreviewOpen(false)}
-      />
     </>
   );
 }
