@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-import { heroImage } from "./security-service-data";
+import heroImage from "@/assets/image/hero.png";
 
 export function HeroShowcase() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="relative aspect-4/5 w-full sm:aspect-16/10 lg:h-203.5 lg:aspect-auto">
         <img
-          src={heroImage}
+          src={heroImage.src}
           alt="Security service hero"
           className="h-full w-full object-cover object-center"
         />
