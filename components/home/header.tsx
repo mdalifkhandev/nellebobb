@@ -5,7 +5,7 @@ export function Header() {
 
   return (
     <header className="bg-white">
-      <div className="mx-auto flex h-[64px] max-w-[1440px] items-center gap-8 px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-16 max-w-360 items-center gap-8 px-6 sm:px-8 lg:px-12">
         <div className="flex shrink-0 items-center">
           <a href="#top" className="flex items-center gap-3">
             <img src={logoMark} alt="nellebobb logo" className="h-11 w-auto sm:h-12" />
@@ -19,7 +19,7 @@ export function Header() {
               <li key={item}>
                 <a
                   href="#"
-                  className="inline-flex items-center font-[family-name:var(--font-poppins)] text-[15px] font-medium tracking-[0.01em] text-[#0a7073] transition hover:opacity-85 sm:text-[17px]"
+                  className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#0a7073] transition hover:opacity-85 sm:text-[17px]"
                 >
                   {item}
                 </a>
@@ -31,7 +31,7 @@ export function Header() {
         <div className="flex shrink-0 items-center">
           <a
             href="#contact"
-            className="inline-flex h-10 items-center justify-center rounded-[8px] bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105"
+            className="inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105"
           >
             Contact Us
           </a>

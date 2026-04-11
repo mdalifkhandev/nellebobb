@@ -1,4 +1,4 @@
-import { heroAccent, heroIllustration } from "./home-data";
+import { heroIllustration } from "./home-data";
 
 export function Hero() {
   return (
@@ -11,7 +11,7 @@ export function Hero() {
           </div>
 
           <div className="mx-auto flex min-h-full max-w-135 flex-col justify-center text-center lg:mx-0 lg:text-left">
-            <h1 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[1] tracking-[0] align-middle sm:text-[32px] lg:max-w-125 lg:text-[46px]">
+            <h1 className="font-(family-name:--font-inter) text-[32px] font-semibold leading-none tracking-[0] align-middle sm:text-[32px] lg:max-w-125 lg:text-[46px]">
               Find the best
               <br />
               professionals in
@@ -33,11 +33,11 @@ export function Hero() {
                 id="service-search"
                 name="service-search"
                 placeholder="What service are you looking for?"
-                className="h-11.5 min-w-0 w-full flex-1 rounded-sm border border-[#d7dbe2] bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-[#9ba3af] focus:border-[#0ba8dd] sm:h-[48px] sm:max-w-[310px]"
+                className="h-11.5 min-w-0 w-full flex-1 rounded-sm border border-[#d7dbe2] bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-[#9ba3af] focus:border-[#0ba8dd] sm:h-12 sm:max-w-77.5"
               />
               <button
                 type="submit"
-                className="group relative inline-flex h-11.5 min-w-46.5 items-center justify-center overflow-hidden rounded-md bg-[linear-gradient(135deg,#16aee0_0%,#12a7da_45%,#109fd1_100%)] px-8 font-(family-name:--font-public-sans) text-sm font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition-all duration-300 hover:translate-y-[-1px] hover:brightness-105 sm:h-[48px]"
+                className="group relative inline-flex h-11.5 min-w-46.5 items-center justify-center overflow-hidden rounded-md bg-[linear-gradient(135deg,#16aee0_0%,#12a7da_45%,#109fd1_100%)] px-8 font-(family-name:--font-public-sans) text-sm font-bold text-white shadow-[0_8px_20px_-12px_rgba(11,168,221,0.85)] transition-all duration-300 hover:-translate-y-px hover:brightness-105 sm:h-12"
               >
                 <span className="pointer-events-none absolute inset-y-0 left-[-8%] w-[40%] skew-x-[-60deg] bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.75)_50%,transparent_100%)] opacity-90 transition-transform duration-500 ease-out group-hover:translate-x-[200%]" />
                 <span className="relative z-10">Search</span>

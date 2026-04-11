@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 
-import { serviceImages, steps } from "./home-data";
+import { steps } from "./home-data";
 import { MailIcon, PlayIcon, SearchIcon } from "./home-icons";
 import { SectionHeading } from "./section-heading";
-import { SecurityServicePreviewModal } from "./security-service-preview-modal";
+import { SecurityServiceWizardModal } from "../security-service/security-service-wizard-modal";
 
 const iconMap = [SearchIcon, MailIcon, PlayIcon];
 
 export function HowItWorks() {
+  const [wizardOpen, setWizardOpen] = useState(false);
 
   return (
     <>
@@ -46,17 +47,20 @@ export function HowItWorks() {
         </p>
 
         <div className="mt-6 text-center sm:mt-8">
-          <p className="font-[family-name:var(--font-poppins)] text-base font-semibold text-[#0f172b] sm:text-[18px]">
+          <p className="font-(family-name:--font-poppins) text-base font-semibold text-[#0f172b] sm:text-[18px]">
             Best of all - it&apos;s completely free!
           </p>
           <button
             type="button"
-            className="mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-[8px] bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-[family-name:var(--font-public-sans)] text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
+            onClick={() => setWizardOpen(true)}
+            className="mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
           >
             Get Quotes from Security Services
           </button>
         </div>
       </section>
+
+      <SecurityServiceWizardModal open={wizardOpen} onClose={() => setWizardOpen(false)} />
     </>
   );
 }

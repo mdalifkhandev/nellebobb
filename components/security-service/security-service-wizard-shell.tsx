@@ -22,7 +22,7 @@ export function SecurityServiceWizardShell({
   showProgress = true,
 }: WizardShellProps) {
   return (
-    <section className="relative w-full max-w-[728px] rounded-[24px] bg-white px-4 py-4 shadow-[0_16px_50px_rgba(15,23,42,0.08)] sm:px-6 sm:py-6">
+    <section className="relative w-full max-w-182 rounded-3xl bg-white px-4 py-4 shadow-[0_16px_50px_rgba(15,23,42,0.08)] sm:px-6 sm:py-6">
       <div className="flex items-start gap-3">
         {showProgress ? (
           <div className="mt-2 h-4 flex-1 overflow-hidden rounded-full bg-[#e1effe]">
@@ -45,11 +45,11 @@ export function SecurityServiceWizardShell({
       </div>
 
       <div className="mt-6 text-center sm:mt-7">
-        <h1 className="font-[family-name:var(--font-inter)] text-[clamp(1.75rem,4vw,2rem)] font-normal leading-[1.08] tracking-[-0.01em] text-[#015555]">
+        <h1 className="font-(family-name:--font-inter) text-[clamp(1.75rem,4vw,2rem)] font-normal leading-[1.08] tracking-[-0.01em] text-[#015555]">
           {title}
         </h1>
         {subtitle ? (
-          <p className="mx-auto mt-3 max-w-[560px] text-sm leading-[1.25] text-[#015555] sm:text-[18px]">
+          <p className="mx-auto mt-3 max-w-140 text-sm leading-tight text-[#015555] sm:text-[18px]">
             {subtitle}
           </p>
         ) : null}

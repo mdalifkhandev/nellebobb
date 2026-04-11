@@ -18,7 +18,7 @@ export function SecurityServiceWizardModal({ open, onClose }: SecurityServiceWiz
       onClick={onClose}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm"
     >
-      <div onClick={(event) => event.stopPropagation()} className="w-full max-w-[728px]">
+      <div onClick={(event) => event.stopPropagation()} className="w-full max-w-182">
         <SecurityServiceWizard onClose={onClose} />
       </div>
     </div>

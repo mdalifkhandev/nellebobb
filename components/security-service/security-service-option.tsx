@@ -9,7 +9,7 @@ export function SecurityServiceOption({ label, selected, onClick }: SecurityServ
     <button
       type="button"
       onClick={onClick}
-      className="flex h-12 w-full items-center gap-3 rounded-[6px] border border-[#e8ebe6] border-b-[0.3px] bg-[#f3f8f4] px-3 py-3 text-left transition hover:bg-[#eef6ef] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30"
+      className="flex h-12 w-full items-center gap-3 rounded-md border border-[#e8ebe6] border-b-[0.3px] bg-[#f3f8f4] px-3 py-3 text-left transition hover:bg-[#eef6ef] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30"
     >
       <span
         className={[
@@ -28,4 +28,3 @@ export function SecurityServiceOption({ label, selected, onClick }: SecurityServ
     </button>
   );
 }
-

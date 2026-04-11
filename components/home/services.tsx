@@ -16,13 +16,13 @@ export function Services() {
           {serviceImages.map((service) => {
             const card = (
               <>
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <img
                     src={service.src}
                     alt={service.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                 </div>
                 <div className="border-t border-[#dce6e2] bg-[linear-gradient(180deg,#0ba8dd_0%,#23b8e8_100%)] px-4 py-3 text-center text-xs font-semibold tracking-[0.08em] text-white sm:px-5 sm:text-sm">
                   {service.title}

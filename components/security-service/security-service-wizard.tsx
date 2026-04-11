@@ -9,7 +9,7 @@ import { SecurityServiceOption } from "./security-service-option";
 import { SecurityServiceWizardShell } from "./security-service-wizard-shell";
 
 const ACTION_BUTTON_BASE =
-  "inline-flex h-9 w-full items-center justify-center rounded-[8px] px-6 text-sm font-bold tracking-[0.2394px] text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30 sm:h-10 sm:w-auto";
+  "inline-flex h-9 w-full items-center justify-center rounded-lg px-6 text-sm font-bold tracking-[0.2394px] text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30 sm:h-10 sm:w-auto";
 
 function clampStep(step: number) {
   if (Number.isNaN(step)) {
@@ -57,7 +57,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
         : "Next";
 
   return (
-    <div className="mx-auto w-full max-w-[728px]">
+    <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
         <SecurityServiceWizardShell
           title={step.title}
@@ -78,7 +78,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
               <button
                 type="button"
                 onClick={() => (currentStep === 1 ? router.push("/") : goToStep(backStep))}
-                className={`${ACTION_BUTTON_BASE} sm:min-w-[102px] bg-[#1c252e] px-5 hover:bg-[#26313d] sm:px-6`}
+                className={`${ACTION_BUTTON_BASE} sm:min-w-25.5 bg-[#1c252e] px-5 hover:bg-[#26313d] sm:px-6`}
               >
                 Back
               </button>
@@ -94,7 +94,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                     goToStep(currentStep + 1);
                   }
                 }}
-                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-[150px]" : "sm:min-w-[102px]"} bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 sm:px-6`}
+                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-37.5" : "sm:min-w-25.5"} bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 sm:px-6`}
               >
                 {primaryAction}
               </button>
