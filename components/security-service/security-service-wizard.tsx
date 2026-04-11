@@ -6,6 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { securityServiceSteps, wizardTotalSteps } from "./security-service-flow-data";
 import { SecurityServiceInput } from "./security-service-input";
 import { SecurityServiceOption } from "./security-service-option";
+import { SecurityServiceSuccessCard } from "./security-service-success-card";
 import { SecurityServiceWizardShell } from "./security-service-wizard-shell";
 
 const ACTION_BUTTON_BASE =
@@ -38,6 +39,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   const [address, setAddress] = useState("");
   const [location, setLocation] = useState("");
   const [selectedByStep, setSelectedByStep] = useState<Record<number, number>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const currentStep = clampStep(Number(searchParams.get("step") ?? "1"));
   const step = securityServiceSteps[currentStep - 1] ?? securityServiceSteps[0];
@@ -56,18 +58,30 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
         ? undefined
         : "Next";
 
+  const buildStepAnswers = () =>
+    securityServiceSteps
+      .filter((item) => item.kind === "choice")
+      .map((item) => {
+        const selectedIndex =
+          selectedByStep[item.id] ?? item.defaultSelectedIndex ?? -1;
+        const answer =
+          selectedIndex >= 0 ? item.options[selectedIndex] : "Not selected";
+
+        return {
+          stepId: item.id,
+          question: item.title,
+          answer,
+        };
+      });
+
   return (
     <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
-        <SecurityServiceWizardShell
+        <SecurityServiceSuccessCard
           title={step.title}
           subtitle={step.subtitle}
           onClose={onClose ?? (() => router.push("/"))}
-          showProgress={false}
-          centerContent
-        >
-          <></>
-        </SecurityServiceWizardShell>
+        />
       ) : (
         <SecurityServiceWizardShell
           progress={progress}
@@ -85,17 +99,45 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
               </button>
               <button
                 type="button"
-                onClick={() => {
+                onClick={async () => {
                   if (step.kind === "choice") {
                     goToStep(currentStep + 1);
                     return;
                   }
 
                   if (step.kind === "input") {
-                    goToStep(currentStep + 1);
+                    if (isSubmitting) {
+                      return;
+                    }
+
+                    setIsSubmitting(true);
+
+                    try {
+                      const response = await fetch("/api/security-service-contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          stepAnswers: buildStepAnswers(),
+                          address,
+                          location,
+                        }),
+                      });
+
+                      if (!response.ok) {
+                        throw new Error("Failed to send email");
+                      }
+
+                      goToStep(currentStep + 1);
+                    } catch (error) {
+                      console.error(error);
+                      window.alert("Email send failed. Please try again.");
+                    } finally {
+                      setIsSubmitting(false);
+                    }
                   }
                 }}
-                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-37.5" : "sm:min-w-25.5"} bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 sm:px-6`}
+                disabled={isSubmitting}
+                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-37.5" : "sm:min-w-25.5"} bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 sm:px-6`}
               >
                 {primaryAction}
               </button>

@@ -128,8 +128,8 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
   {
     id: 10,
     kind: "success",
-    title: "Congratulations! Thanks for emailing us.",
-    subtitle: "One of our representatives will contact you shortly.",
+    title: "Congratulations!",
+    subtitle: "Thanks for emailing us. One of our representatives will contact you shortly.",
   },
 ];
 
