@@ -6,6 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { securityServiceSteps, wizardTotalSteps } from "./security-service-flow-data";
 import { SecurityServiceInput } from "./security-service-input";
 import { SecurityServiceOption } from "./security-service-option";
+import { SecurityServiceSuccessCard } from "./security-service-success-card";
 import { SecurityServiceWizardShell } from "./security-service-wizard-shell";
 
 const ACTION_BUTTON_BASE =
@@ -59,15 +60,11 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   return (
     <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
-        <SecurityServiceWizardShell
+        <SecurityServiceSuccessCard
           title={step.title}
           subtitle={step.subtitle}
           onClose={onClose ?? (() => router.push("/"))}
-          showProgress={false}
-          centerContent
-        >
-          <></>
-        </SecurityServiceWizardShell>
+        />
       ) : (
         <SecurityServiceWizardShell
           progress={progress}
