@@ -53,7 +53,7 @@ export function HowItWorks() {
           <button
             type="button"
             onClick={() => setWizardOpen(true)}
-            className="mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
+            className="shine-button mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
           >
             Get Quotes from Security Services
           </button>

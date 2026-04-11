@@ -19,7 +19,7 @@ export function Header() {
               <li key={item}>
                 <a
                   href="#"
-                  className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#0a7073] transition hover:opacity-85 sm:text-[17px]"
+                  className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#015555] transition hover:opacity-80 sm:text-[17px]"
                 >
                   {item}
                 </a>
@@ -31,7 +31,7 @@ export function Header() {
         <div className="flex shrink-0 items-center">
           <a
             href="#contact"
-            className="inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105"
+            className="shine-button text-white inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105"
           >
             Contact Us
           </a>

@@ -17,7 +17,7 @@ export function CtaBand() {
         ))}
       </div>
 
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-2 sm:px-6 sm:py-2 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="relative mx-auto max-w-70 sm:max-w-sm lg:mx-0">
           <img
             src={ctaPortrait}
@@ -35,7 +35,7 @@ export function CtaBand() {
             </h2>
             <a
               href="#"
-            className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#0ba8dd] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.14em] text-white shadow-[3px_4px_0px_0px_#3d3d3d] transition hover:-translate-y-px hover:bg-[#19b5e5] sm:h-12 sm:text-sm"
+              className="shine-button mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#0ba8dd] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.14em] text-white shadow-[3px_4px_0px_0px_#3d3d3d] transition hover:-translate-y-px hover:bg-[#19b5e5] sm:h-12 sm:text-sm"
             >
               Contact Us
             </a>

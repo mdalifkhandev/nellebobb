@@ -30,7 +30,7 @@ export function SecurityServicePreviewModal({ open, onClose, imageSrc }: Securit
           type="button"
           aria-label="Close modal"
           onClick={onClose}
-          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow-sm transition hover:bg-white"
+          className="shine-button absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-800/90 text-white shadow-sm transition hover:bg-slate-700"
         >
           <span className="text-xl leading-none">×</span>
         </button>
@@ -51,13 +51,13 @@ export function SecurityServicePreviewModal({ open, onClose, imageSrc }: Securit
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-10 items-center justify-center rounded-[8px] bg-slate-800 px-5 text-sm font-bold text-white transition hover:bg-slate-700"
+              className="shine-button inline-flex h-10 items-center justify-center rounded-[8px] bg-slate-800 px-5 text-sm font-bold text-white transition hover:bg-slate-700"
             >
               Close
             </button>
             <Link
               href="/security-service"
-              className="inline-flex h-10 items-center justify-center rounded-[8px] bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 text-sm font-bold text-white shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] transition hover:brightness-105"
+              className="shine-button inline-flex h-10 items-center justify-center rounded-[8px] bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 text-sm font-bold text-white shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] transition hover:brightness-105"
             >
               Open page
             </Link>

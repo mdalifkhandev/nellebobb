@@ -34,3 +34,45 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@keyframes button-shine {
+  0% {
+    transform: translateX(-165%) skewX(-28deg);
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.92;
+  }
+  32% {
+    transform: translateX(235%) skewX(-28deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(235%) skewX(-28deg);
+    opacity: 0;
+  }
+}
+
+.shine-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+}
+
+.shine-button::before {
+  content: "";
+  position: absolute;
+  inset: -18% auto -18% -42%;
+  width: 38%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.78) 50%, transparent 100%);
+  transform: translateX(-165%) skewX(-28deg);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: button-shine 3.9s ease-in-out infinite;
+}
+
+.shine-button:hover::before {
+  animation-duration: 1.2s;
+}

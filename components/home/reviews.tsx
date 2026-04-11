@@ -52,14 +52,14 @@ export function Reviews() {
           <button
             type="button"
             aria-label="Previous testimonials"
-            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-white text-[#015555] shadow-sm transition hover:bg-[#eef8f6] sm:h-12 sm:w-12"
+            className="shine-button flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-[#015555] text-white shadow-sm transition hover:bg-[#02706d] sm:h-12 sm:w-12"
           >
             <ChevronLeftIcon className="h-5 w-5" />
           </button>
           <button
             type="button"
             aria-label="Next testimonials"
-            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-white text-[#015555] shadow-sm transition hover:bg-[#eef8f6] sm:h-12 sm:w-12"
+            className="shine-button flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-[#015555] text-white shadow-sm transition hover:bg-[#02706d] sm:h-12 sm:w-12"
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>

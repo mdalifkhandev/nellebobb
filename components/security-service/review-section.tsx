@@ -50,7 +50,7 @@ export function ReviewSection() {
         <div className="mt-10 text-center sm:mt-12">
           <a
             href="#"
-            className="inline-flex h-11 w-full max-w-105 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
+            className="shine-button inline-flex h-11 w-full max-w-105 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
           >
             Get Quotes from Security Services
           </a>

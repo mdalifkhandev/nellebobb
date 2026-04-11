@@ -9,7 +9,7 @@ import { SecurityServiceOption } from "./security-service-option";
 import { SecurityServiceWizardShell } from "./security-service-wizard-shell";
 
 const ACTION_BUTTON_BASE =
-  "inline-flex h-9 w-full items-center justify-center rounded-lg px-6 text-sm font-bold tracking-[0.2394px] text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30 sm:h-10 sm:w-auto";
+  "shine-button inline-flex h-9 w-full items-center justify-center rounded-lg px-6 text-sm font-bold tracking-[0.2394px] text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30 sm:h-10 sm:w-auto";
 
 function clampStep(step: number) {
   if (Number.isNaN(step)) {

@@ -40,7 +40,7 @@ export function SecurityServiceWizardShell({
           type="button"
           onClick={onClose}
           aria-label="Close wizard"
-          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[#FE6C5D] transition hover:bg-[#fff1ef]"
+          className="shine-button inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FE6C5D] text-white transition hover:bg-[#f25d4d]"
         >
           <CloseIcon className="h-4 w-4" />
         </button>

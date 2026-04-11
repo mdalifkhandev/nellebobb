@@ -8,29 +8,31 @@ export const ctaPortrait =
 export const logoMark = "https://www.figma.com/api/mcp/asset/4e9b07cd-7282-444d-ad83-0cddaf2a9a03";
 export const footerMark = "https://www.figma.com/api/mcp/asset/e73b14da-caaa-43d1-9721-f5a18409fc49";
 
+
+
 export const serviceImages = [
   {
-    src: "https://www.figma.com/api/mcp/asset/f135012f-77eb-46dd-a10d-5eae532d7c8a",
+    src: "https://www.figma.com/api/mcp/asset/72942804-6569-4457-a139-0230bbd0c0db",
     title: "Security Service",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/72942804-6569-4457-a139-0230bbd0c0db",
+    src: "https://www.figma.com/api/mcp/asset/44e626b5-f419-4800-9962-74731a14bec8",
     title: "Legal Service",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/44e626b5-f419-4800-9962-74731a14bec8",
+    src: "https://www.figma.com/api/mcp/asset/b0418f56-65fe-41cd-9632-de10e433ca5b",
     title: "Event Management",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/b0418f56-65fe-41cd-9632-de10e433ca5b",
+    src: "https://www.figma.com/api/mcp/asset/cb6643e2-de29-47ce-ac21-4f0f228ed4b2",
     title: "House Cleaning",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/cb6643e2-de29-47ce-ac21-4f0f228ed4b2",
+    src: "https://www.figma.com/api/mcp/asset/2b0ec7ca-4f7a-43b0-b5ed-660cdf4b7da7",
     title: "Training",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/2b0ec7ca-4f7a-43b0-b5ed-660cdf4b7da7",
+    src: "/consulting.png",
     title: "Consulting",
   },
 ] as const;
