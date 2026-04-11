@@ -64,6 +64,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
           subtitle={step.subtitle}
           onClose={onClose ?? (() => router.push("/"))}
           showProgress={false}
+          centerContent
         >
           <></>
         </SecurityServiceWizardShell>
