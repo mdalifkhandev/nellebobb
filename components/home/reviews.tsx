@@ -79,7 +79,7 @@ export function Reviews() {
             type="button"
             aria-label="Previous testimonials"
             onClick={goPrev}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#cfe2ef] bg-white text-[#6b7b88] shadow-sm transition hover:border-[#0ba8dd] hover:text-[#0ba8dd] sm:h-12 sm:w-12"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d5e2ec] bg-white text-[#8fa0ad] shadow-[0_6px_14px_rgba(15,23,42,0.08)] transition hover:border-[#0ba8dd] hover:text-[#0ba8dd] sm:h-12 sm:w-12"
           >
             <ChevronLeftIcon className="h-5 w-5" />
           </button>
@@ -87,7 +87,7 @@ export function Reviews() {
             type="button"
             aria-label="Next testimonials"
             onClick={goNext}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#cfe2ef] bg-white text-[#6b7b88] shadow-sm transition hover:border-[#0ba8dd] hover:text-[#0ba8dd] sm:h-12 sm:w-12"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d5e2ec] bg-white text-[#8fa0ad] shadow-[0_6px_14px_rgba(15,23,42,0.08)] transition hover:border-[#0ba8dd] hover:text-[#0ba8dd] sm:h-12 sm:w-12"
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>

@@ -84,13 +84,24 @@ export async function POST(request: Request) {
     return Response.json({ error: "Missing required fields." }, { status: 400 });
   }
 
+  const adminSubject = payload.subject || "New Security Service Request";
+
   await transporter.sendMail({
     from: `"Security Service Request" <${user}>`,
     to,
     replyTo: payload.fromEmail,
-    subject: payload.subject || "New Security Service Request",
+    subject: adminSubject,
     text,
   });
+
+  if (payload.fromEmail) {
+    await transporter.sendMail({
+      from: `"Security Service Request" <${user}>`,
+      to: payload.fromEmail,
+      subject: "We received your request",
+      text: "Thanks for your request. Our team will contact you shortly.",
+    });
+  }
 
   return Response.json({ ok: true });
 }
