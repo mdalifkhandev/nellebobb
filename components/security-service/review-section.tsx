@@ -8,6 +8,8 @@ function StarIcon() {
   );
 }
 
+const avatarColors = ["bg-[#0ea5e9]", "bg-[#f97316]", "bg-[#10b981]", "bg-[#f59e0b]", "bg-[#111827]"];
+
 export function ReviewSection() {
   return (
     <section className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
@@ -22,11 +24,17 @@ export function ReviewSection() {
         </div>
 
         <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <article key={review.name} className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <img src={review.avatar} alt={review.name} className="h-10 w-10 rounded-full object-cover sm:h-11 sm:w-11" />
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white sm:h-11 sm:w-11 ${
+                      avatarColors[index % avatarColors.length]
+                    }`}
+                  >
+                    {review.name.charAt(0).toUpperCase()}
+                  </div>
                   <div className="pt-0.5">
                     <p className="font-(family-name:--font-poppins) text-[15px] font-semibold text-[#111111] sm:text-base">
                       {review.name}

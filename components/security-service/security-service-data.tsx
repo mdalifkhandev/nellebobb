@@ -35,32 +35,39 @@ export const serviceSteps = [
 
 export const reviews = [
   {
-    name: "Joanne Humphries",
+    name: "Jammie Schmitt",
     avatar: reviewAvatar1,
-    date: "12/04/25",
+    date: "2 years ago",
+    text:
+      "Excellent Security Service! We have been partnering with this company for several years, and they consistently provide top-notch security for our business. Professional security personnel and swift response to any incidents.",
+  },
+  {
+    name: "Claris Green",
+    avatar: reviewAvatar2,
+    date: "3 years ago",
+    text:
+      "The BEST hands down!! Got both my certification for American Heart BLS, great high-quality training! Paul took his time to make sure you understand and practice everything! I would definitely recommend calling here for your security training!",
+  },
+  {
+    name: "Nicole Lucas",
+    avatar: reviewAvatar3,
+    date: "3 years ago",
+    text:
+      "Quick, thorough, no up-selling of services. They do a great job and always respond quickly to our requests. My go-to Office, wouldn't think of going any other place for investigations!",
+  },
+  {
+    name: "Joanne Humphries",
+    avatar: reviewAvatar4,
+    date: "5 years ago",
     text:
       "Absolutely the best. Efficient, fast, patient, responsive and KIND! Can’t thank them enough for their professionalism and care!",
   },
   {
     name: "Ufo Medz",
     avatar: reviewAvatar2,
-    date: "10/04/25",
+    date: "5 years ago",
     text:
       "my name is mickoye wallace .. and my experience working with Samuels' Security and investigators is going to be something to remember, they take a no nonsense approach on how they carry out their operations.. the team execute with.......",
-  },
-  {
-    name: "Arnisa Osmani",
-    avatar: reviewAvatar3,
-    date: "10/04/25",
-    text:
-      "The security service responds to alarm signals quickly and professionally. This is crucial for our business, and we are entirely satisfied with their performance.",
-  },
-  {
-    name: "Nathon Finnegan",
-    avatar: reviewAvatar4,
-    date: "07/04/25",
-    text:
-      "Responsive service, fair prices and trusted professionals. Great contact and excellent follow-through.",
   },
 ] as const;
 

@@ -9,9 +9,12 @@ type StepAnswer = {
 };
 
 type SecurityServicePayload = {
-  stepAnswers: StepAnswer[];
+  stepAnswers?: StepAnswer[];
   address?: string;
   location?: string;
+  fromEmail?: string;
+  subject?: string;
+  details?: string;
 };
 
 function getEnv(name: "SMTP_USER" | "SMTP_PASS" | "MAIL_TO") {
@@ -28,7 +31,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid JSON payload." }, { status: 400 });
   }
 
-  if (!payload || !Array.isArray(payload.stepAnswers)) {
+  if (!payload) {
     return Response.json({ error: "Missing required fields." }, { status: 400 });
   }
 
@@ -51,9 +54,21 @@ export async function POST(request: Request) {
     },
   });
 
-  const lines = payload.stepAnswers.map(
+  const lines = (payload.stepAnswers ?? []).map(
     (answer) => `${answer.question}\n- ${answer.answer}`
   );
+
+  if (payload.fromEmail) {
+    lines.push(`From: ${payload.fromEmail}`);
+  }
+
+  if (payload.subject) {
+    lines.push(`Subject: ${payload.subject}`);
+  }
+
+  if (payload.details) {
+    lines.push(`Details:\n${payload.details}`);
+  }
 
   if (payload.address) {
     lines.push(`Address: ${payload.address}`);
@@ -65,10 +80,15 @@ export async function POST(request: Request) {
 
   const text = lines.join("\n\n");
 
+  if (!text.trim()) {
+    return Response.json({ error: "Missing required fields." }, { status: 400 });
+  }
+
   await transporter.sendMail({
     from: `"Security Service Request" <${user}>`,
     to,
-    subject: "New Security Service Request",
+    replyTo: payload.fromEmail,
+    subject: payload.subject || "New Security Service Request",
     text,
   });
 
