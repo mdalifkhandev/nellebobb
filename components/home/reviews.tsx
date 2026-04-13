@@ -44,7 +44,7 @@ export function Reviews() {
           {visibleReviews.map(({ review, colorIndex }) => (
             <article
               key={review.name}
-              className="rounded-2xl border border-[#d6e6f2] bg-[#eaf4fb] p-5 shadow-[0_10px_24px_-20px_rgba(15,23,42,0.45)] sm:p-6"
+              className="flex h-full flex-col rounded-2xl border border-[#d6e6f2] bg-[#eaf4fb] p-5 shadow-[0_10px_24px_-20px_rgba(15,23,42,0.45)] sm:p-6"
             >
               <div className="flex items-start justify-between gap-3 sm:gap-4">
                 <div>
@@ -58,7 +58,7 @@ export function Reviews() {
                 <QuoteMark />
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-[15px]">{review.text}</p>
+              <p className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">{review.text}</p>
 
               <div className="mt-6 flex items-center gap-3">
                 <div
