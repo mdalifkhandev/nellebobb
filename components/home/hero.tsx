@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { heroIllustration } from "./home-data";
 
 export function Hero() {
@@ -52,12 +54,16 @@ export function Hero() {
 
         {/* Right side visual area: illustration framed with soft background gradients */}
         <div className="relative flex items-center justify-center overflow-hidden bg-white px-5 py-8 sm:px-6 sm:py-10 lg:px-2 lg:py-0">
-          
-          <img
+          <div className="relative z-10 h-195 w-full">
+            <Image
               src={heroIllustration}
               alt="Person holding a phone with service bubbles"
-              className="relative z-10 h-195 w-full object-contain object-center p-2 sm:p-3 lg:p-0"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-contain object-center p-2 sm:p-3 lg:p-0"
             />
+          </div>
         </div>
       </div>
     </section>

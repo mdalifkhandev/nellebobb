@@ -50,7 +50,7 @@ export function SiteFooter() {
         </div>
 
         <div className="pt-5 text-sm text-white/90">
-          © 2026 investigatorltd. Global Limited. Terms & Conditions / Cookie policy / Privacy policy
+          © 2026 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy
         </div>
       </div>
     </footer>

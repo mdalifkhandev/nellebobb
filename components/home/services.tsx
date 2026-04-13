@@ -30,25 +30,14 @@ export function Services() {
               </>
             );
 
-            if (service.title === "Security Service") {
-              return (
-                <Link
-                  key={service.title}
-                  href="/security-service"
-                  className="group overflow-hidden rounded-2xl border border-[#dce6e2] bg-white shadow-[0_16px_34px_-28px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
-                >
-                  {card}
-                </Link>
-              );
-            }
-
             return (
-              <article
+              <Link
                 key={service.title}
+                href="/security-service"
                 className="group overflow-hidden rounded-2xl border border-[#dce6e2] bg-white shadow-[0_16px_34px_-28px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
               >
                 {card}
-              </article>
+              </Link>
             );
           })}
         </div>
