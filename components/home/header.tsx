@@ -1,3 +1,4 @@
+import { ContactUsButton } from "./contact-us-button";
 import { logoMark } from "./home-data";
 
 export function Header() {
@@ -29,12 +30,7 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center">
-          <a
-            href="#contact"
-            className="shine-button text-white inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105"
-          >
-            Contact Us
-          </a>
+          <ContactUsButton className="shine-button inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105" />
         </div>
       </div>
     </header>

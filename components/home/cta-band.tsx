@@ -1,3 +1,4 @@
+import { ContactUsButton } from "./contact-us-button";
 import { ctaPortrait } from "./home-data";
 
 export function CtaBand() {
@@ -33,12 +34,7 @@ export function CtaBand() {
             <h2 className="text-3xl font-bold tracking-[0.01em] text-white sm:text-5xl">
               Need help finding the right Service?
             </h2>
-            <a
-              href="#"
-              className="shine-button mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#0ba8dd] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.14em] text-white shadow-[3px_4px_0px_0px_#3d3d3d] transition hover:-translate-y-px hover:bg-[#19b5e5] sm:h-12 sm:text-sm"
-            >
-              Contact Us
-            </a>
+            <ContactUsButton className="shine-button mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#0ba8dd] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.14em] text-white shadow-[3px_4px_0px_0px_#3d3d3d] transition hover:-translate-y-px hover:bg-[#19b5e5] sm:h-12 sm:text-sm" />
           </div>
         </div>
       </div>
