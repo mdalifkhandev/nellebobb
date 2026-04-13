@@ -1,4 +1,8 @@
-import { reviews } from "./home-data";
+"use client";
+
+import { useState } from "react";
+
+import { reviews } from "../security-service/security-service-data";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -8,6 +12,26 @@ import {
 import { SectionHeading } from "./section-heading";
 
 export function Reviews() {
+  const avatarColors = ["bg-[#0ea5e9]", "bg-[#f97316]", "bg-[#10b981]", "bg-[#f59e0b]", "bg-[#111827]"];
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
+  const total = reviews.length;
+
+  const visibleReviews = Array.from({ length: Math.min(visibleCount, total) }).map(
+    (_, offset) => {
+      const index = (startIndex + offset) % total;
+      return { review: reviews[index], colorIndex: index };
+    }
+  );
+
+  const goPrev = () => {
+    setStartIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  const goNext = () => {
+    setStartIndex((prev) => (prev + 1) % total);
+  };
+
   return (
     <section className="bg-[#eef7f4] py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -17,7 +41,7 @@ export function Reviews() {
         />
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3 xl:mt-10">
-          {reviews.map((review) => (
+          {visibleReviews.map(({ review, colorIndex }) => (
             <article
               key={review.name}
               className="rounded-2xl border border-[#d6e6f2] bg-[#eaf4fb] p-5 shadow-[0_10px_24px_-20px_rgba(15,23,42,0.45)] sm:p-6"
@@ -37,11 +61,13 @@ export function Reviews() {
               <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-[15px]">{review.text}</p>
 
               <div className="mt-6 flex items-center gap-3">
-                <img
-                  src={review.avatar}
-                  alt={review.name}
-                  className="h-11 w-11 rounded-full border-2 border-white object-cover shadow-md sm:h-12 sm:w-12"
-                />
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold text-white shadow-md ring-2 ring-white sm:h-12 sm:w-12 ${
+                    avatarColors[colorIndex % avatarColors.length]
+                  }`}
+                >
+                  {review.name.charAt(0).toUpperCase()}
+                </div>
                 <p className="text-sm font-semibold text-slate-800 sm:text-base">{review.name}</p>
               </div>
             </article>
@@ -52,6 +78,7 @@ export function Reviews() {
           <button
             type="button"
             aria-label="Previous testimonials"
+            onClick={goPrev}
             className="shine-button flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-[#015555] text-white shadow-sm transition hover:bg-[#02706d] sm:h-12 sm:w-12"
           >
             <ChevronLeftIcon className="h-5 w-5" />
@@ -59,6 +86,7 @@ export function Reviews() {
           <button
             type="button"
             aria-label="Next testimonials"
+            onClick={goNext}
             className="shine-button flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#015555] bg-[#015555] text-white shadow-sm transition hover:bg-[#02706d] sm:h-12 sm:w-12"
           >
             <ChevronRightIcon className="h-5 w-5" />
