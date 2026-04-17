@@ -86,21 +86,32 @@ export async function POST(request: Request) {
 
   const adminSubject = payload.subject || "New Security Service Request";
 
-  await transporter.sendMail({
-    from: `"Security Service Request" <${user}>`,
-    to,
-    replyTo: payload.fromEmail,
-    subject: adminSubject,
-    text,
-  });
-
-  if (payload.fromEmail) {
+  try {
     await transporter.sendMail({
       from: `"Security Service Request" <${user}>`,
-      to: payload.fromEmail,
-      subject: "We received your request",
-      text: "Thanks for your request. Our team will contact you shortly.",
+      to,
+      replyTo: payload.fromEmail,
+      subject: adminSubject,
+      text,
     });
+
+    if (payload.fromEmail) {
+      await transporter.sendMail({
+        from: `"Security Service Request" <${user}>`,
+        to: payload.fromEmail,
+        subject: "We received your request",
+        text: "Thanks for your request. Our team will contact you shortly.",
+      });
+    }
+  } catch (error) {
+    console.error("Failed to send security service email", error);
+    return Response.json(
+      {
+        error:
+          "Email could not be sent. Check SMTP_USER, SMTP_PASS, and MAIL_TO in your server environment.",
+      },
+      { status: 500 }
+    );
   }
 
   return Response.json({ ok: true });

@@ -74,6 +74,15 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
         };
       });
 
+  const getErrorMessage = async (response: Response) => {
+    try {
+      const data = (await response.json()) as { error?: string };
+      return data.error || "Email send failed. Please try again.";
+    } catch {
+      return "Email send failed. Please try again.";
+    }
+  };
+
   return (
     <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
@@ -124,13 +133,13 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                       });
 
                       if (!response.ok) {
-                        throw new Error("Failed to send email");
+                        throw new Error(await getErrorMessage(response));
                       }
 
                       goToStep(currentStep + 1);
                     } catch (error) {
                       console.error(error);
-                      window.alert("Email send failed. Please try again.");
+                      window.alert(error instanceof Error ? error.message : "Email send failed. Please try again.");
                     } finally {
                       setIsSubmitting(false);
                     }
