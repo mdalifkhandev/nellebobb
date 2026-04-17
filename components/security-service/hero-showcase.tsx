@@ -21,7 +21,7 @@ export function HeroShowcase() {
   }, [slides.length]);
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section id="our-service" className="relative overflow-hidden bg-white">
       <div className="relative aspect-4/5 w-full sm:aspect-16/10 lg:h-203.5 lg:aspect-auto">
         {slides.map((slide, index) => (
           <img
@@ -41,7 +41,7 @@ export function HeroShowcase() {
             Best of all - it&apos;s completely free!
           </p>
           <Link
-            href="#services"
+            href="#how-we-work"
             className="shine-button inline-flex h-12 w-full max-w-110.25 items-center justify-center rounded-lg bg-[linear-gradient(121deg,#39c8ee_0%,#18aae2_52%,#11a8de_100%)] px-6 font-(family-name:--font-public-sans) text-[15px] font-bold tracking-[0.016em] text-white shadow-[0_8px_20px_-12px_rgba(17,168,222,0.75)]"
           >
             Get Site a Assessment

@@ -1,4 +1,6 @@
-import { arrowIcon, faqs } from "./security-service-data";
+import { FiChevronRight } from "react-icons/fi";
+
+import { faqs } from "./security-service-data";
 
 export function FaqSection() {
   return (
@@ -22,10 +24,9 @@ export function FaqSection() {
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-(family-name:--font-poppins) text-sm text-[#1f1d1d] sm:gap-4">
                 <span className="pr-2">{faq.question}</span>
-                <img
-                  src={arrowIcon}
-                  alt=""
-                  className="h-5 w-5 rotate-90 transition group-open:-rotate-90"
+                <FiChevronRight
+                  aria-hidden="true"
+                  className="h-5 w-5 rotate-90 text-[#015555] transition group-open:-rotate-90"
                 />
               </summary>
               <div className="mt-4 text-[13px] leading-6 text-[#3a3a3a] sm:text-[13.6px]">{faq.answer}</div>

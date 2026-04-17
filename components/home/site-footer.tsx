@@ -18,7 +18,7 @@ const socialIconMap = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
+    <footer id="about-us" className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-[28px] bg-[#015555] px-5 py-8 text-white shadow-[0_20px_50px_-34px_rgba(15,23,42,0.55)] sm:px-8 lg:px-10">
         <div className="grid gap-8 border-b border-white/20 pb-8 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr_1.1fr]">
           <div className="space-y-6 sm:col-span-2 lg:col-span-1">

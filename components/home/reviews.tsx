@@ -33,7 +33,7 @@ export function Reviews() {
   };
 
   return (
-    <section className="bg-[#eef7f4] py-16 sm:py-20">
+    <section id="customer-review" className="bg-[#eef7f4] py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Client Reviews"

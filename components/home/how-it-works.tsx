@@ -16,7 +16,7 @@ export function HowItWorks() {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section id="how-we-work" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <SectionHeading
           title="How we work"
           subtitle="A simple path from search to service, designed to keep the process quick and clear."

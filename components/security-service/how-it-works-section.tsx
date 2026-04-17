@@ -10,7 +10,7 @@ export function HowItWorksSection() {
 
   return (
     <>
-      <section id="services" className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
+      <section id="how-we-work" className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h1 className="font-[family-name:var(--font-poppins)] text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-tight text-[#015555] sm:text-[clamp(2.2rem,4vw,3rem)]">

@@ -12,7 +12,7 @@ const avatarColors = ["bg-[#0ea5e9]", "bg-[#f97316]", "bg-[#10b981]", "bg-[#f59e
 
 export function ReviewSection() {
   return (
-    <section className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+    <section id="customer-review" className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
       <div className="mx-auto max-w-300">
         <div className="text-center">
           <h2 className="font-(family-name:--font-poppins) text-[clamp(1.85rem,4vw,2.9rem)] font-semibold leading-tight text-[#015555]">
@@ -57,7 +57,7 @@ export function ReviewSection() {
 
         <div className="mt-10 text-center sm:mt-12">
           <a
-            href="#"
+            href="#how-we-work"
             className="shine-button inline-flex h-11 w-full max-w-105 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
           >
             Get Quotes from Security Services
