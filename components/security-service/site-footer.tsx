@@ -1,9 +1,13 @@
+import { footerMark, footerLinks, socialLinks } from "./security-service-data";
 import {
-  footerMark,
-  footerLinks,
-  socialLinks,
-} from "./security-service-data";
-import { FacebookIcon, InstagramIcon, LinkedInIcon, LocationIcon, MailIcon, PhoneIcon, XIcon } from "@/components/home/home-icons";
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  LocationIcon,
+  MailIcon,
+  PhoneIcon,
+  XIcon,
+} from "@/components/home/home-icons";
 import { FooterColumn } from "./footer-column";
 import { FooterContact } from "./footer-contact";
 
@@ -16,11 +20,18 @@ const socialIconMap = {
 
 export function SiteFooter() {
   return (
-    <footer id="about-us" className="bg-[#f3f8f4] px-4 pb-10 pt-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-[24px] bg-[#015555] px-5 py-8 text-white shadow-[0_20px_50px_-34px_rgba(15,23,42,0.55)] sm:px-8 lg:px-10">
+    <footer
+      id="about-us"
+      className="bg-[#f3f8f4] px-4 pb-10 pt-12 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-7xl rounded-3xl bg-[#015555] px-5 py-8 text-white shadow-[0_20px_50px_-34px_rgba(15,23,42,0.55)] sm:px-8 lg:px-10">
         <div className="grid gap-8 border-b border-white/20 pb-8 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr_1.1fr]">
           <div className="space-y-6 sm:col-span-2 lg:col-span-1">
-            <img src={footerMark} alt="investigator ltd logo" className="h-9 w-auto" />
+            <img
+              src={footerMark}
+              alt="investigator ltd logo"
+              className="h-9 w-auto"
+            />
             <div className="flex flex-wrap items-center gap-3">
               {socialLinks.map((social) => {
                 const Icon = socialIconMap[social.label];
@@ -42,15 +53,24 @@ export function SiteFooter() {
           <FooterColumn title="Product" links={footerLinks.support} />
 
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
-            <h3 className="font-[family-name:var(--font-poppins)] text-2xl font-medium">About US</h3>
+            <h3 className="font-(family-name:--font-poppins) text-2xl font-medium">
+              About US
+            </h3>
             <FooterContact icon={PhoneIcon} text="+284 4995975" />
-            <FooterContact icon={MailIcon} text="info@bvisecurityservices.com" />
-            <FooterContact icon={LocationIcon} text="19 Waterfront Drive, Road Town, Tortola, BVI VG1110" />
+            <FooterContact
+              icon={MailIcon}
+              text="info@bvisecurityservices.com"
+            />
+            <FooterContact
+              icon={LocationIcon}
+              text="19 Waterfront Drive, Road Town, Tortola, BVI VG1110"
+            />
           </div>
         </div>
 
         <div className="pt-5 text-sm text-white/90">
-          © 2026 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy
+          © 2026 Bark.com Global Limited. Terms & Conditions / Cookie policy /
+          Privacy policy
         </div>
       </div>
     </footer>

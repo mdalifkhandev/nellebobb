@@ -53,14 +53,18 @@ export function EmailAdminModal({ open, onClose }: EmailAdminModalProps) {
       setShowSuccess(true);
     } catch (error) {
       console.error(error);
-      window.alert(error instanceof Error ? error.message : "Email send failed. Please try again.");
+      window.alert(
+        error instanceof Error
+          ? error.message
+          : "Email send failed. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 px-4 py-6">
+    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 px-4 py-6">
       {showSuccess ? (
         <div className="relative w-full max-w-sm rounded-3xl bg-white px-6 pb-8 pt-6 text-center shadow-[0_20px_60px_rgba(15,23,42,0.25)]">
           <button
