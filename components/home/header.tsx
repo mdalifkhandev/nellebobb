@@ -13,13 +13,16 @@ const defaultNavItems: NavItem[] = [
   { label: "About US", href: "#about-us" },
 ];
 
-export function Header({ navItems = defaultNavItems }: { navItems?: NavItem[] }) {
-
+export function Header({
+  navItems = defaultNavItems,
+}: {
+  navItems?: NavItem[];
+}) {
   return (
     <header className="bg-white">
       <div className="mx-auto flex h-16 max-w-360 items-center gap-8 px-6 sm:px-8 lg:px-12">
         <div className="flex shrink-0 items-center">
-          <a href="#top" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img
               src={logoMark}
               alt="nellebobb logo"
