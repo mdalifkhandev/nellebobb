@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 import consultingServiceImage from "@/assets/image/Consulting.png";
 import eventManagementServiceImage from "@/assets/image/Event-Management.png";
 import houseCleaningServiceImage from "@/assets/image/House-Cleaning.png";
@@ -5,6 +7,15 @@ import legalServiceImage from "@/assets/image/Legal-Service.png";
 import localLogoAsset from "@/assets/image/logo.svg";
 import securityServiceImage from "@/assets/image/Security-Service.png";
 import trainingServiceImage from "@/assets/image/Training.png";
+
+type ServiceImage = {
+  src: StaticImageData;
+  title: string;
+  slug: string;
+  href: string;
+  keywords: string[];
+  openContactModal?: boolean;
+};
 
 export const heroIllustration =
   "https://www.figma.com/api/mcp/asset/bab8dd2f-1941-448a-95f0-810f97fb37e8";
@@ -20,50 +31,56 @@ const localLogoSrc =
 export const logoMark = localLogoSrc;
 export const footerMark = localLogoSrc;
 
-export const serviceImages = [
+export const serviceImages: readonly ServiceImage[] = [
   {
     src: securityServiceImage,
     title: "Security Service",
     slug: "security-service",
     href: "/security-service",
     keywords: ["security", "bodyguard", "patrol", "guard", "protection"],
+    openContactModal: false,
   },
   {
     src: legalServiceImage,
     title: "Legal Service",
     slug: "legal-service",
-    href: "/security-service",
+    href: "https://www.aumonds.com/",
     keywords: ["legal", "law", "lawyer", "attorney"],
+    openContactModal: false,
   },
   {
     src: eventManagementServiceImage,
     title: "Event Management",
     slug: "event-management",
-    href: "/security-service",
+    href: "#",
+    openContactModal: true,
     keywords: ["event", "events", "management", "planning"],
   },
   {
     src: houseCleaningServiceImage,
     title: "House Cleaning",
     slug: "house-cleaning",
-    href: "/security-service",
+    href: "#",
+    openContactModal: true,
     keywords: ["cleaning", "house", "home cleaning", "maid"],
   },
   {
     src: trainingServiceImage,
     title: "Training",
     slug: "training",
-    href: "/security-service",
+    href: "#",
+    openContactModal: true,
     keywords: ["training", "course", "certification", "class"],
   },
   {
     src: consultingServiceImage,
     title: "Consulting",
     slug: "consulting",
-    href: "/security-service",
+    href: "#",
+    openContactModal: true,
     keywords: ["consulting", "consultant", "advisory", "advice"],
   },
-] as const;
+];
 
 export function normalizeSearchTerm(value: string) {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
