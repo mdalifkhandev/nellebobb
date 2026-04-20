@@ -17,8 +17,6 @@ type ServiceImage = {
   openContactModal?: boolean;
 };
 
-export const heroIllustration =
-  "https://www.figma.com/api/mcp/asset/bab8dd2f-1941-448a-95f0-810f97fb37e8";
 export const heroAccent =
   "https://www.figma.com/api/mcp/asset/cc4fa7db-a6f2-43b9-98ac-0a00a15e8941";
 

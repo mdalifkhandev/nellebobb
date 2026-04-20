@@ -62,3 +62,22 @@ export function EmailIcon({ className }: IconProps) {
   );
 }
 
+export function PhoneIcon({ className }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M6.13 2.5h2.04c.39 0 .72.27.81.65l.54 2.32a.84.84 0 0 1-.24.8L8 7.55a10.5 10.5 0 0 0 4.45 4.45l1.28-1.28a.84.84 0 0 1 .8-.24l2.32.54c.38.09.65.42.65.81v2.04c0 .46-.37.83-.83.83C8.9 14.7 5.3 11.1 5.3 6.13c0-.46.37-.83.83-.83Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+

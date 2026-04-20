@@ -82,6 +82,12 @@ export const XIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const TikTokIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M14.1 3c.3 1.8 1.4 3.5 3.2 4.2.7.3 1.5.5 2.3.5v2.6a7.5 7.5 0 0 1-3-.6v5.2a5.4 5.4 0 1 1-5.4-5.4c.3 0 .6 0 .9.1v2.7a2.7 2.7 0 1 0 1.8 2.6V3h.2Z" />
+  </svg>
+);
+
 export const LinkedInIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M6.4 8H3.8V21h2.6V8ZM5.1 3.2A1.7 1.7 0 1 0 5.1 6.6a1.7 1.7 0 0 0 0-3.4ZM21 21h-2.6v-6.4c0-1.5-.6-2.5-2.1-2.5-1.1 0-1.7.8-2 1.6-.1.3-.1.8-.1 1.3V21H11.7s.1-10.8 0-13h2.6v1.8c.3-.9 1.6-2.1 3.6-2.1 2.6 0 4.5 1.7 4.5 5.3V21Z" />

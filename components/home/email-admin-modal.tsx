@@ -123,7 +123,7 @@ export function EmailAdminModal({ open, onClose }: EmailAdminModalProps) {
           </button>
 
           <h2 className="text-center font-(family-name:--font-poppins) text-xl font-semibold text-[#015555]">
-            Email Admin
+            Contact Us
           </h2>
           <p className="mt-2 text-center text-sm text-slate-600">
             Send your request directly to our admins.

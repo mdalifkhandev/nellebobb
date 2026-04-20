@@ -25,11 +25,11 @@ export function Header({
       <div className="mx-auto flex h-16 max-w-360 items-center gap-8 px-6 sm:px-8 lg:px-12">
         <div className="flex shrink-0 items-center">
           <Link href="/" className="flex items-center gap-3">
-            <img
+            {/* <img
               src={logoMark}
               alt="nellebobb logo"
               className="h-11 w-auto sm:h-12"
-            />
+            /> */}
             <span className="sr-only">nellebobb</span>
           </Link>
         </div>

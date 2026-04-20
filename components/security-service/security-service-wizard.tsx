@@ -97,6 +97,20 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
     }, {});
   };
 
+  const getFieldIcon = (fieldId: string) => {
+    const normalizedId = fieldId.trim().toLowerCase();
+
+    if (normalizedId === "email") {
+      return "email" as const;
+    }
+
+    if (normalizedId === "phone number" || normalizedId === "phone") {
+      return "phone" as const;
+    }
+
+    return "location" as const;
+  };
+
   return (
     <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
@@ -218,7 +232,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                       });
                     }
                   }
-                  icon={field.id === "email" ? "email" : "location"}
+                  icon={getFieldIcon(field.id)}
                   error={inputErrors[field.id]}
                 />
               ))}

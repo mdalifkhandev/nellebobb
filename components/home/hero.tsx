@@ -4,7 +4,8 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { findServiceMatch, heroIllustration } from "./home-data";
+import { findServiceMatch } from "./home-data";
+import heroIllustration from "@/assets/image/hero-first.png";
 
 export function Hero() {
   const router = useRouter();
@@ -24,10 +25,10 @@ export function Hero() {
   }
 
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-[#015c5b]">
-      <div className="bg-[#015c5b] mx-auto grid min-h-125 max-w-360 items-stretch lg:grid-cols-[1.08fr_0.92fr]">
+    <section id="top" className="relative isolate overflow-hidden bg-[#0A1F44]">
+      <div className="bg-[#0A1F44] mx-auto grid min-h-125 max-w-360 items-stretch lg:grid-cols-[1.08fr_0.92fr]">
         {/* Left side content area: headline, subtext, and search form */}
-        <div className="relative overflow-hidden bg-[#015c5b] px-6 py-14 text-[#f1f4f4] sm:px-10 sm:py-16 lg:px-14 lg:py-24 xl:px-16">
+        <div className="relative overflow-hidden bg-[#0A1F44] px-6 py-14 text-[#f1f4f4] sm:px-10 sm:py-16 lg:px-14 lg:py-24 xl:px-16">
           <div className="absolute left-24 top-10 hidden h-10 w-28 opacity-80 lg:block">
             {/* <img src={heroAccent} alt="" className="h-full w-full object-contain" /> */}
           </div>
@@ -78,18 +79,17 @@ export function Hero() {
         </div>
 
         {/* Right side visual area: illustration framed with soft background gradients */}
-        <div className="relative flex items-center justify-center overflow-hidden bg-white px-5 py-8 sm:px-6 sm:py-10 lg:px-2 lg:py-0">
+        {/* <div className="relative flex items-center justify-center overflow-hidden bg-white px-5 py-8 sm:px-6 sm:py-10 lg:px-2 lg:py-0">
           <div className="relative z-10 h-195 w-full">
             <Image
               src={heroIllustration}
               alt="Person holding a phone with service bubbles"
-              fill
               priority
               sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-contain object-center p-2 sm:p-3 lg:p-0"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -137,13 +137,18 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
     fields: [
       {
         id: "email",
-        label: "Enter your email address",
-        placeholder: "Enter your email address",
+        label: " Email address",
+        placeholder: "Email address",
+      },
+      {
+        id: "Phone Number",
+        label: "Phone Number",
+        placeholder: "Phone Number",
       },
       {
         id: "address",
         label: "Enter your Address",
-        placeholder: "Enter your Address",
+        placeholder: "Enter your address",
       },
     ],
   },

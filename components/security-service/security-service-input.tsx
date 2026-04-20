@@ -1,10 +1,10 @@
-import { EmailIcon, LocationPinIcon } from "./security-service-icons";
+import { EmailIcon, LocationPinIcon, PhoneIcon } from "./security-service-icons";
 
 type SecurityServiceInputProps = {
   label: string;
   value: string;
   onChange: (value: string) => void;
-  icon?: "location" | "email";
+  icon?: "location" | "email" | "phone";
   error?: string;
 };
 
@@ -15,7 +15,12 @@ export function SecurityServiceInput({
   icon = "location",
   error,
 }: SecurityServiceInputProps) {
-  const Icon = icon === "email" ? EmailIcon : LocationPinIcon;
+  const Icon =
+    icon === "email"
+      ? EmailIcon
+      : icon === "phone"
+        ? PhoneIcon
+        : LocationPinIcon;
 
   return (
     <div className="space-y-1.5">
