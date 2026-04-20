@@ -34,3 +34,31 @@ export function LocationPinIcon({ className }: IconProps) {
   );
 }
 
+export function EmailIcon({ className }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      fill="none"
+      className={className}
+    >
+      <rect
+        x="2.25"
+        y="4.25"
+        width="15.5"
+        height="11.5"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.75 6L9.03 9.96C9.62 10.4 10.38 10.4 10.97 9.96L16.25 6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+

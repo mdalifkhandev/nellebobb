@@ -10,6 +10,7 @@ type StepAnswer = {
 
 type SecurityServicePayload = {
   stepAnswers?: StepAnswer[];
+  email?: string;
   address?: string;
   location?: string;
   fromEmail?: string;
@@ -20,6 +21,15 @@ type SecurityServicePayload = {
 function getEnv(name: "SMTP_USER" | "SMTP_PASS" | "MAIL_TO") {
   const value = process.env[name];
   return value && value.trim().length > 0 ? value : undefined;
+}
+
+function getRecipients(value: string | undefined, fallback: string) {
+  const recipients = (value ?? "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  return recipients.length > 0 ? recipients : [fallback];
 }
 
 export async function POST(request: Request) {
@@ -37,9 +47,10 @@ export async function POST(request: Request) {
 
   const user = getEnv("SMTP_USER");
   const pass = getEnv("SMTP_PASS");
-  const to = getEnv("MAIL_TO") ?? user;
+  const recipients = getRecipients(getEnv("MAIL_TO"), user ?? "");
+  const customerEmail = payload.email?.trim() || payload.fromEmail?.trim();
 
-  if (!user || !pass || !to) {
+  if (!user || !pass || recipients.length === 0) {
     return Response.json(
       { error: "Email is not configured on the server." },
       { status: 500 }
@@ -58,8 +69,8 @@ export async function POST(request: Request) {
     (answer) => `${answer.question}\n- ${answer.answer}`
   );
 
-  if (payload.fromEmail) {
-    lines.push(`From: ${payload.fromEmail}`);
+  if (customerEmail) {
+    lines.push(`Customer Email: ${customerEmail}`);
   }
 
   if (payload.subject) {
@@ -89,18 +100,19 @@ export async function POST(request: Request) {
   try {
     await transporter.sendMail({
       from: `"Security Service Request" <${user}>`,
-      to,
-      replyTo: payload.fromEmail,
+      to: recipients.join(", "),
+      replyTo: customerEmail,
       subject: adminSubject,
       text,
     });
 
-    if (payload.fromEmail) {
+    if (customerEmail) {
       await transporter.sendMail({
         from: `"Security Service Request" <${user}>`,
-        to: payload.fromEmail,
+        to: customerEmail,
         subject: "We received your request",
-        text: "Thanks for your request. Our team will contact you shortly.",
+        text:
+          "Thanks for your request. We received your details and our team will contact you shortly.",
       });
     }
   } catch (error) {

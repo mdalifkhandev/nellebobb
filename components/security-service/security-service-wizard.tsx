@@ -36,8 +36,8 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [address, setAddress] = useState("");
-  const [location, setLocation] = useState("");
+  const [inputValues, setInputValues] = useState<Record<string, string>>({});
+  const [inputErrors, setInputErrors] = useState<Record<string, string>>({});
   const [selectedByStep, setSelectedByStep] = useState<Record<number, number>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -83,6 +83,21 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
     }
   };
 
+  const validateInputFields = () => {
+    if (step.kind !== "input") {
+      return {};
+    }
+
+    return step.fields.reduce<Record<string, string>>((errors, field) => {
+      if ((inputValues[field.id] ?? "").trim()) {
+        return errors;
+      }
+
+      errors[field.id] = `${field.label.replace(/^Enter your\s+/i, "")} is required`;
+      return errors;
+    }, {});
+  };
+
   return (
     <div className="mx-auto w-full max-w-182">
       {step.kind === "success" ? (
@@ -119,6 +134,14 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                       return;
                     }
 
+                    const validationErrors = validateInputFields();
+
+                    if (Object.keys(validationErrors).length > 0) {
+                      setInputErrors(validationErrors);
+                      return;
+                    }
+
+                    setInputErrors({});
                     setIsSubmitting(true);
 
                     try {
@@ -127,8 +150,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                           stepAnswers: buildStepAnswers(),
-                          address,
-                          location,
+                          ...inputValues,
                         }),
                       });
 
@@ -175,16 +197,32 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
             </div>
           ) : step.kind === "input" ? (
             <div className="space-y-4">
-              <SecurityServiceInput
-                label={step.fields[0]?.placeholder ?? ""}
-                value={address}
-                onChange={setAddress}
-              />
-              <SecurityServiceInput
-                label={step.fields[1]?.placeholder ?? ""}
-                value={location}
-                onChange={setLocation}
-              />
+              {step.fields.map((field) => (
+                <SecurityServiceInput
+                  key={field.id}
+                  label={field.placeholder}
+                  value={inputValues[field.id] ?? ""}
+                  onChange={(value) =>
+                    {
+                      setInputValues((current) => ({
+                        ...current,
+                        [field.id]: value,
+                      }));
+                      setInputErrors((current) => {
+                        if (!current[field.id]) {
+                          return current;
+                        }
+
+                        const nextErrors = { ...current };
+                        delete nextErrors[field.id];
+                        return nextErrors;
+                      });
+                    }
+                  }
+                  icon={field.id === "email" ? "email" : "location"}
+                  error={inputErrors[field.id]}
+                />
+              ))}
             </div>
           ) : null}
         </SecurityServiceWizardShell>

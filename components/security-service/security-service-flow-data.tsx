@@ -136,14 +136,14 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
       "The postcode or town for the address where you want the security man.",
     fields: [
       {
+        id: "email",
+        label: "Enter your email address",
+        placeholder: "Enter your email address",
+      },
+      {
         id: "address",
         label: "Enter your Address",
         placeholder: "Enter your Address",
-      },
-      {
-        id: "location",
-        label: "Enter your ZIP code or town",
-        placeholder: "Enter your ZIP code or town",
       },
     ],
   },
