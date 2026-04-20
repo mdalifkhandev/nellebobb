@@ -1,6 +1,11 @@
+import localLogoAsset from "@/assets/image/logo.svg";
+
+const localLogoSrc =
+  typeof localLogoAsset === "string" ? localLogoAsset : localLogoAsset.src;
+
 export const heroImage = "https://www.figma.com/api/mcp/asset/98fdff65-7d12-4751-a913-e34be17ffb57";
-export const logoMark = "https://www.figma.com/api/mcp/asset/a0994950-daf4-4c39-aaaa-d719d5aefeea";
-export const footerMark = "https://www.figma.com/api/mcp/asset/9f1f1cdd-0900-43cf-ae1e-c4c31f1b3100";
+export const logoMark = localLogoSrc;
+export const footerMark = localLogoSrc;
 export const starStrip = "https://www.figma.com/api/mcp/asset/1b8b0337-dd17-46db-b583-c61f12189069";
 export const reviewAvatar1 = "https://www.figma.com/api/mcp/asset/5fe7ff60-e8c8-449d-a69a-8a9749d95b03";
 export const reviewAvatar2 = "https://www.figma.com/api/mcp/asset/08533b8d-28f2-4093-819c-98cf84da8cc8";

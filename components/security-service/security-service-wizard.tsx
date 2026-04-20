@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { securityServiceSteps, wizardTotalSteps } from "./security-service-flow-data";
 import { SecurityServiceInput } from "./security-service-input";
@@ -35,18 +35,17 @@ type SecurityServiceWizardProps = {
 export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [inputValues, setInputValues] = useState<Record<string, string>>({});
   const [inputErrors, setInputErrors] = useState<Record<string, string>>({});
   const [selectedByStep, setSelectedByStep] = useState<Record<number, number>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
 
-  const currentStep = clampStep(Number(searchParams.get("step") ?? "1"));
   const step = securityServiceSteps[currentStep - 1] ?? securityServiceSteps[0];
   const progress = progressForStep(currentStep);
 
   const goToStep = (nextStep: number) => {
-    router.push(`${pathname}?step=${clampStep(nextStep)}`);
+    setCurrentStep(clampStep(nextStep));
   };
 
   const backStep = currentStep === 1 ? 1 : currentStep - 1;
@@ -104,19 +103,19 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
         <SecurityServiceSuccessCard
           title={step.title}
           subtitle={step.subtitle}
-          onClose={onClose ?? (() => router.push("/"))}
+          onClose={onClose ?? (() => router.push(pathname))}
         />
       ) : (
         <SecurityServiceWizardShell
           progress={progress}
           title={step.title}
           subtitle={step.kind === "input" ? step.subtitle : undefined}
-          onClose={onClose ?? (() => router.push("/"))}
+          onClose={onClose ?? (() => router.push(pathname))}
           actions={
             <>
               <button
                 type="button"
-                onClick={() => (currentStep === 1 ? router.push("/") : goToStep(backStep))}
+                onClick={() => (currentStep === 1 ? (onClose ? onClose() : router.push(pathname)) : goToStep(backStep))}
                 className={`${ACTION_BUTTON_BASE} sm:min-w-25.5 bg-[#1c252e] px-5 hover:bg-[#26313d] sm:px-6`}
               >
                 Back

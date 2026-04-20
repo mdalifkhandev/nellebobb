@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ContactUsButton } from "./contact-us-button";
 import { logoMark } from "./home-data";
 
@@ -7,10 +9,10 @@ type NavItem = {
 };
 
 const defaultNavItems: NavItem[] = [
-  { label: "Our Service", href: "#our-service" },
-  { label: "How we work", href: "#how-we-work" },
-  { label: "Customer Review", href: "#customer-review" },
-  { label: "About US", href: "#about-us" },
+  { label: "Our Service", href: "/#our-service" },
+  { label: "How we work", href: "/#how-we-work" },
+  { label: "Customer Review", href: "/#customer-review" },
+  { label: "About US", href: "/#about-us" },
 ];
 
 export function Header({
@@ -22,26 +24,26 @@ export function Header({
     <header className="bg-white">
       <div className="mx-auto flex h-16 max-w-360 items-center gap-8 px-6 sm:px-8 lg:px-12">
         <div className="flex shrink-0 items-center">
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <img
               src={logoMark}
               alt="nellebobb logo"
               className="h-11 w-auto sm:h-12"
             />
             <span className="sr-only">nellebobb</span>
-          </a>
+          </Link>
         </div>
 
         <nav className="flex flex-1 justify-center overflow-x-auto">
           <ul className="flex min-w-max items-center gap-8 lg:gap-12">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#015555] transition hover:opacity-80 sm:text-[17px]"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

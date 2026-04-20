@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { serviceImages } from "./home-data";
@@ -23,9 +24,11 @@ export function Services({ activeService }: ServicesProps) {
             const card = (
               <>
                 <div className="relative aspect-4/3 overflow-hidden">
-                  <img
+                  <Image
                     src={service.src}
                     alt={service.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />

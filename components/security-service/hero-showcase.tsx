@@ -41,7 +41,7 @@ export function HeroShowcase() {
             Best of all - it&apos;s completely free!
           </p>
           <Link
-            href="#how-we-work"
+            href="/security-service#how-we-work"
             className="shine-button inline-flex h-12 w-full max-w-110.25 items-center justify-center rounded-lg bg-[linear-gradient(121deg,#39c8ee_0%,#18aae2_52%,#11a8de_100%)] px-6 font-(family-name:--font-public-sans) text-[15px] font-bold tracking-[0.016em] text-white shadow-[0_8px_20px_-12px_rgba(17,168,222,0.75)]"
           >
             Get Site a Assessment

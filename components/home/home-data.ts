@@ -1,3 +1,11 @@
+import consultingServiceImage from "@/assets/image/Consulting.png";
+import eventManagementServiceImage from "@/assets/image/Event-Management.png";
+import houseCleaningServiceImage from "@/assets/image/House-Cleaning.png";
+import legalServiceImage from "@/assets/image/Legal-Service.png";
+import localLogoAsset from "@/assets/image/logo.svg";
+import securityServiceImage from "@/assets/image/Security-Service.png";
+import trainingServiceImage from "@/assets/image/Training.png";
+
 export const heroIllustration =
   "https://www.figma.com/api/mcp/asset/bab8dd2f-1941-448a-95f0-810f97fb37e8";
 export const heroAccent =
@@ -6,49 +14,50 @@ export const heroAccent =
 export const ctaPortrait =
   "https://www.figma.com/api/mcp/asset/1cf5c3c8-79ac-4e7f-8a4a-2f57e202401c";
 
-export const logoMark =
-  "https://www.figma.com/api/mcp/asset/4e9b07cd-7282-444d-ad83-0cddaf2a9a03";
-export const footerMark =
-  "https://www.figma.com/api/mcp/asset/e73b14da-caaa-43d1-9721-f5a18409fc49";
+const localLogoSrc =
+  typeof localLogoAsset === "string" ? localLogoAsset : localLogoAsset.src;
+
+export const logoMark = localLogoSrc;
+export const footerMark = localLogoSrc;
 
 export const serviceImages = [
   {
-    src: "https://www.figma.com/api/mcp/asset/72942804-6569-4457-a139-0230bbd0c0db",
+    src: securityServiceImage,
     title: "Security Service",
     slug: "security-service",
     href: "/security-service",
     keywords: ["security", "bodyguard", "patrol", "guard", "protection"],
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/44e626b5-f419-4800-9962-74731a14bec8",
+    src: legalServiceImage,
     title: "Legal Service",
     slug: "legal-service",
     href: "/security-service",
     keywords: ["legal", "law", "lawyer", "attorney"],
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/b0418f56-65fe-41cd-9632-de10e433ca5b",
+    src: eventManagementServiceImage,
     title: "Event Management",
     slug: "event-management",
     href: "/security-service",
     keywords: ["event", "events", "management", "planning"],
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/cb6643e2-de29-47ce-ac21-4f0f228ed4b2",
+    src: houseCleaningServiceImage,
     title: "House Cleaning",
     slug: "house-cleaning",
     href: "/security-service",
     keywords: ["cleaning", "house", "home cleaning", "maid"],
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/2b0ec7ca-4f7a-43b0-b5ed-660cdf4b7da7",
+    src: trainingServiceImage,
     title: "Training",
     slug: "training",
     href: "/security-service",
     keywords: ["training", "course", "certification", "class"],
   },
   {
-    src: "/consulting.png",
+    src: consultingServiceImage,
     title: "Consulting",
     slug: "consulting",
     href: "/security-service",
