@@ -40,14 +40,27 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
     id: 2,
     kind: "choice",
     title: "Which of these services do you need?",
-    options: ["Bodyguard's", "Event security services", "Loss prevention", "Roving patrol services", "Premises security", "Other"],
+    options: [
+      "Bodyguard's",
+      "Event security services",
+      "Loss prevention",
+      "Roving patrol services",
+      "Premises security",
+      "Other",
+    ],
     defaultSelectedIndex: 0,
   },
   {
     id: 3,
     kind: "choice",
     title: "How many individuals need close protection?",
-    options: ["1 person", "2 people", "3-5 people", "6 or more people", "Other"],
+    options: [
+      "1 person",
+      "2 people",
+      "3-5 people",
+      "6 or more people",
+      "Other",
+    ],
     defaultSelectedIndex: 0,
   },
   {
@@ -77,7 +90,15 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
     id: 6,
     kind: "choice",
     title: "How often do you require this service?",
-    options: ["Ongoing", "Several months", "Several weeks", "Several days", "Specific dates", "One off", "Other"],
+    options: [
+      "Ongoing",
+      "Several months",
+      "Several weeks",
+      "Several days",
+      "Specific dates",
+      "One off",
+      "Other",
+    ],
     defaultSelectedIndex: 0,
   },
   {
@@ -110,8 +131,9 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
   {
     id: 9,
     kind: "input",
-    title: "Where do you need the security man?",
-    subtitle: "The postcode or town for the address where you want the security man.",
+    title: "Where do you need the security service?",
+    subtitle:
+      "The postcode or town for the address where you want the security man.",
     fields: [
       {
         id: "address",
@@ -129,7 +151,8 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
     id: 10,
     kind: "success",
     title: "Congratulations!",
-    subtitle: "Thanks for emailing us. One of our representatives will contact you shortly.",
+    subtitle:
+      "Thanks for emailing us. One of our representatives will contact you shortly.",
   },
 ];
 

@@ -3,7 +3,12 @@ import Link from "next/link";
 import { serviceImages } from "./home-data";
 import { SectionHeading } from "./section-heading";
 
-export function Services() {
+type ServicesProps = {
+  activeService?: string;
+};
+
+export function Services({ activeService }: ServicesProps) {
+
   return (
     <section id="our-service" className="bg-[#f3f8f4] py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -14,6 +19,7 @@ export function Services() {
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:mt-10 xl:grid-cols-3">
           {serviceImages.map((service) => {
+            const isActive = activeService === service.slug;
             const card = (
               <>
                 <div className="relative aspect-4/3 overflow-hidden">
@@ -33,8 +39,12 @@ export function Services() {
             return (
               <Link
                 key={service.title}
-                href="/security-service"
-                className="group overflow-hidden rounded-2xl border border-[#dce6e2] bg-white shadow-[0_16px_34px_-28px_rgba(15,23,42,0.5)] transition hover:-translate-y-1"
+                href={service.href}
+                className={`group overflow-hidden rounded-2xl border bg-white shadow-[0_16px_34px_-28px_rgba(15,23,42,0.5)] transition hover:-translate-y-1 ${
+                  isActive
+                    ? "border-[#0ba8dd] ring-2 ring-[#0ba8dd]/25"
+                    : "border-[#dce6e2]"
+                }`}
               >
                 {card}
               </Link>

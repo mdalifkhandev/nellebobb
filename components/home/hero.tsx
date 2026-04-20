@@ -1,8 +1,28 @@
-import Image from "next/image";
+"use client";
 
-import { heroIllustration } from "./home-data";
+import { FormEvent, useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+
+import { findServiceMatch, heroIllustration } from "./home-data";
 
 export function Hero() {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const matchedService = findServiceMatch(query);
+
+    if (matchedService) {
+      router.push(matchedService.href);
+      return;
+    }
+
+    router.push("/#our-service");
+  }
+
   return (
     <section id="top" className="relative isolate overflow-hidden bg-[#015c5b]">
       <div className="bg-[#015c5b] mx-auto grid min-h-125 max-w-360 items-stretch lg:grid-cols-[1.08fr_0.92fr]">
@@ -27,7 +47,10 @@ export function Hero() {
             </p>
 
             {/* Form stacks on small screens and aligns horizontally from `sm` and up */}
-            <form className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
+            <form
+              className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4"
+              onSubmit={handleSubmit}
+            >
               <label className="sr-only" htmlFor="service-search">
                 What service are you looking for?
               </label>
@@ -35,6 +58,8 @@ export function Hero() {
                 id="service-search"
                 name="service-search"
                 placeholder="What service are you looking for?"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
                 className="h-11.5 min-w-0 w-full flex-1 rounded-sm border border-[#d7dbe2] bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-[#9ba3af] focus:border-[#0ba8dd] sm:h-12 sm:max-w-77.5"
               />
               <button

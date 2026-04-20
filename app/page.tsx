@@ -1,5 +1,13 @@
 import { HomePage } from "@/components/home/home-page";
 
-export default function Page() {
-  return <HomePage />;
+type PageProps = {
+  searchParams?: Promise<{
+    service?: string;
+  }>;
+};
+
+export default async function Page({ searchParams }: PageProps) {
+  const params = await searchParams;
+
+  return <HomePage activeService={params?.service} />;
 }
