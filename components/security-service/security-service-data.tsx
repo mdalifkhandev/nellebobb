@@ -48,30 +48,35 @@ export const serviceSteps = [
 
 export const reviews = [
   {
+    quelity: "Excellent Service!",
     name: "Jammie Schmitt",
     avatar: reviewAvatar1,
     date: "2 years ago",
     text: "Excellent Security Service! We have been partnering with this company for several years, and they consistently provide top-notch security for our business. Professional security personnel and swift response to any incidents.",
   },
   {
+    quelity: "Best in the Business!",
     name: "Claris Green",
     avatar: reviewAvatar2,
     date: "3 years ago",
     text: "The BEST hands down!! Got both my certification for American Heart BLS, great high-quality training! Paul took his time to make sure you understand and practice everything! I would definitely recommend calling here for your security training!",
   },
   {
+    quelity: "Quick Service!",
     name: "Nicole Lucas",
     avatar: reviewAvatar3,
     date: "3 years ago",
     text: "Quick, thorough, no up-selling of services. They do a great job and always respond quickly to our requests. My go-to Office, wouldn't think of going any other place for investigations!",
   },
   {
+    quelity: "Highly Recommended!",
     name: "Joanne Humphries",
     avatar: reviewAvatar4,
     date: "5 years ago",
     text: "Absolutely the best. Efficient, fast, patient, responsive and KIND! Can’t thank them enough for their professionalism and care!",
   },
   {
+    quelity: "Professional Team!",
     name: "Ufo Medz",
     avatar: reviewAvatar2,
     date: "5 years ago",

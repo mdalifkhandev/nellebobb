@@ -35,7 +35,7 @@ export const serviceImages: readonly ServiceImage[] = [
     title: "Security Service",
     slug: "security-service",
     href: "/security-service",
-    keywords: ["security", "bodyguard", "patrol", "guard", "protection"],
+    keywords: ["security", "bodyguard", "patrol", "officers", "protection"],
     openContactModal: false,
   },
   {
@@ -156,6 +156,6 @@ export const footerLinks = {
 export const socialLinks = [
   { label: "Facebook" },
   { label: "Instagram" },
-  { label: "X" },
+  { label: "TikTok" },
   { label: "LinkedIn" },
 ] as const;

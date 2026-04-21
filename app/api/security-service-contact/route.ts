@@ -10,7 +10,11 @@ type StepAnswer = {
 
 type SecurityServicePayload = {
   stepAnswers?: StepAnswer[];
+  name?: string;
   email?: string;
+  phone?: string;
+  phoneNumber?: string;
+  "Phone Number"?: string;
   address?: string;
   location?: string;
   fromEmail?: string;
@@ -49,6 +53,11 @@ export async function POST(request: Request) {
   const pass = getEnv("SMTP_PASS");
   const recipients = getRecipients(getEnv("MAIL_TO"), user ?? "");
   const customerEmail = payload.email?.trim() || payload.fromEmail?.trim();
+  const customerName = payload.name?.trim();
+  const customerPhone =
+    payload.phoneNumber?.trim() ||
+    payload["Phone Number"]?.trim() ||
+    payload.phone?.trim();
 
   if (!user || !pass || recipients.length === 0) {
     return Response.json(
@@ -71,6 +80,14 @@ export async function POST(request: Request) {
 
   if (customerEmail) {
     lines.push(`Customer Email: ${customerEmail}`);
+  }
+
+  if (customerName) {
+    lines.push(`Customer Name: ${customerName}`);
+  }
+
+  if (customerPhone) {
+    lines.push(`Customer Phone: ${customerPhone}`);
   }
 
   if (payload.subject) {

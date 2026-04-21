@@ -45,7 +45,7 @@ export function Services({ activeService }: ServicesProps) {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                   </div>
-                  <div className="border-t border-[#dce6e2] bg-[linear-gradient(180deg,#0ba8dd_0%,#23b8e8_100%)] px-4 py-3 text-center text-xs font-semibold tracking-[0.08em] text-white sm:px-5 sm:text-sm">
+                  <div className="border-t border-[#dce6e2] bg-[#123D7A] px-4 py-3 text-center text-xs font-semibold tracking-[0.08em] text-white sm:px-5 sm:text-sm">
                     {service.title}
                   </div>
                 </>

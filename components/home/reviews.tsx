@@ -12,17 +12,23 @@ import {
 import { SectionHeading } from "./section-heading";
 
 export function Reviews() {
-  const avatarColors = ["bg-[#0ea5e9]", "bg-[#f97316]", "bg-[#10b981]", "bg-[#f59e0b]", "bg-[#111827]"];
+  const avatarColors = [
+    "bg-[#0ea5e9]",
+    "bg-[#f97316]",
+    "bg-[#10b981]",
+    "bg-[#f59e0b]",
+    "bg-[#111827]",
+  ];
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 3;
   const total = reviews.length;
 
-  const visibleReviews = Array.from({ length: Math.min(visibleCount, total) }).map(
-    (_, offset) => {
-      const index = (startIndex + offset) % total;
-      return { review: reviews[index], colorIndex: index };
-    }
-  );
+  const visibleReviews = Array.from({
+    length: Math.min(visibleCount, total),
+  }).map((_, offset) => {
+    const index = (startIndex + offset) % total;
+    return { review: reviews[index], colorIndex: index };
+  });
 
   const goPrev = () => {
     setStartIndex((prev) => (prev - 1 + total) % total);
@@ -37,7 +43,7 @@ export function Reviews() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Client Reviews"
-          subtitle="A few words from the people and teams we’ve helped keep moving."
+          subtitle="A few words from our clients and teams"
         />
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3 xl:mt-10">
@@ -48,7 +54,9 @@ export function Reviews() {
             >
               <div className="flex items-start justify-between gap-3 sm:gap-4">
                 <div>
-                  <p className="text-sm font-semibold text-[#015555] sm:text-base">Great Quality!</p>
+                  <p className="text-sm font-semibold text-[#015555] sm:text-base">
+                    {review.quelity}
+                  </p>
                   <div className="mt-3 flex items-center gap-1 text-[#f7b500]">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <StarIcon key={index} className="h-4 w-4 fill-current" />
@@ -58,7 +66,9 @@ export function Reviews() {
                 <QuoteMark />
               </div>
 
-              <p className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">{review.text}</p>
+              <p className="mt-5 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">
+                {review.text}
+              </p>
 
               <div className="mt-6 flex items-center gap-3">
                 <div
@@ -68,7 +78,9 @@ export function Reviews() {
                 >
                   {review.name.charAt(0).toUpperCase()}
                 </div>
-                <p className="text-sm font-semibold text-slate-800 sm:text-base">{review.name}</p>
+                <p className="text-sm font-semibold text-slate-800 sm:text-base">
+                  {review.name}
+                </p>
               </div>
             </article>
           ))}

@@ -41,7 +41,7 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
     kind: "choice",
     title: "Which of these services do you need?",
     options: [
-      "Bodyguard's",
+      "Body officers's",
       "Event security services",
       "Loss prevention",
       "Roving patrol services",
@@ -131,10 +131,14 @@ export const securityServiceSteps: ReadonlyArray<SecurityServiceStep> = [
   {
     id: 9,
     kind: "input",
-    title: "Where do you need the security service?",
-    subtitle:
-      "The postcode or town for the address where you want the security man.",
+    title: "Where do you need the service?",
+    subtitle: "",
     fields: [
+      {
+        id: "name",
+        label: "Full Name",
+        placeholder: "Full Name",
+      },
       {
         id: "email",
         label: " Email address",

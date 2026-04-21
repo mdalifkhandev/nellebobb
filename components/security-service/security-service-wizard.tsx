@@ -100,6 +100,10 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
   const getFieldIcon = (fieldId: string) => {
     const normalizedId = fieldId.trim().toLowerCase();
 
+    if (normalizedId === "name" || normalizedId === "full name") {
+      return "user" as const;
+    }
+
     if (normalizedId === "email") {
       return "email" as const;
     }
@@ -163,6 +167,8 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                           stepAnswers: buildStepAnswers(),
+                          phoneNumber:
+                            inputValues["Phone Number"] ?? inputValues.phone ?? "",
                           ...inputValues,
                         }),
                       });

@@ -7,12 +7,12 @@ export function FaqSection() {
     <section className="bg-[#f3f8f4] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <div className="text-center">
-          <h2 className="font-(family-name:--font-poppins) text-[clamp(1.9rem,4vw,3rem)] font-semibold text-[#015555]">
-            Security Services FAQs
+          <h2 className="font-(family-name:--font-poppins) text-[clamp(1.9rem,4vw,3rem)] font-semibold text-[#123D7A]">
+            FAQs
           </h2>
           <p className="mt-3 text-sm text-[#3a3a3a] sm:text-[18px]">
-            Have questions or need assistance? We&apos;re here to help. Reach out to us or learn using any of the
-            methods below.
+            Have questions or need assistance? We&apos;re here to help. Reach
+            out to us or learn about the services.
           </p>
         </div>
 
@@ -29,7 +29,9 @@ export function FaqSection() {
                   className="h-5 w-5 rotate-90 text-[#015555] transition group-open:-rotate-90"
                 />
               </summary>
-              <div className="mt-4 text-[13px] leading-6 text-[#3a3a3a] sm:text-[13.6px]">{faq.answer}</div>
+              <div className="mt-4 text-[13px] leading-6 text-[#3a3a3a] sm:text-[13.6px]">
+                {faq.answer}
+              </div>
             </details>
           ))}
         </div>

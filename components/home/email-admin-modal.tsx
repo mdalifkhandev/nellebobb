@@ -8,6 +8,8 @@ type EmailAdminModalProps = {
 };
 
 export function EmailAdminModal({ open, onClose }: EmailAdminModalProps) {
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [fromEmail, setFromEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [details, setDetails] = useState("");
@@ -40,6 +42,8 @@ export function EmailAdminModal({ open, onClose }: EmailAdminModalProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          name: fullName,
+          phoneNumber,
           fromEmail,
           subject,
           details,
@@ -130,6 +134,30 @@ export function EmailAdminModal({ open, onClose }: EmailAdminModalProps) {
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <label className="block text-sm font-medium text-[#0f172b]">
+              Full Name
+              <input
+                type="text"
+                value={fullName}
+                onChange={(event) => setFullName(event.target.value)}
+                required
+                className="mt-2 h-11 w-full rounded-lg border border-[#dce6e2] px-4 text-sm text-slate-700 shadow-sm focus:border-[#0ba8dd] focus:outline-none focus:ring-2 focus:ring-[#0ba8dd]/30"
+                placeholder="Full Name"
+              />
+            </label>
+
+            <label className="block text-sm font-medium text-[#0f172b]">
+              Phone Number
+              <input
+                type="tel"
+                value={phoneNumber}
+                onChange={(event) => setPhoneNumber(event.target.value)}
+                required
+                className="mt-2 h-11 w-full rounded-lg border border-[#dce6e2] px-4 text-sm text-slate-700 shadow-sm focus:border-[#0ba8dd] focus:outline-none focus:ring-2 focus:ring-[#0ba8dd]/30"
+                placeholder="Phone Number"
+              />
+            </label>
+
             <label className="block text-sm font-medium text-[#0f172b]">
               Your Email
               <input

@@ -40,7 +40,7 @@ export function Header({
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#015555] transition hover:opacity-80 sm:text-[17px]"
+                  className="inline-flex items-center font-(family-name:--font-poppins) text-[15px] font-medium tracking-[0.01em] text-[#123D7A] transition hover:opacity-80 sm:text-[17px]"
                 >
                   {item.label}
                 </Link>
@@ -50,7 +50,7 @@ export function Header({
         </nav>
 
         <div className="flex shrink-0 items-center">
-          <ContactUsButton className="shine-button inline-flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,#18bee8_0%,#0ca8dd_100%)] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105" />
+          <ContactUsButton className="shine-button inline-flex h-10 items-center justify-center rounded-lg bg-[#123D7A] px-7 text-sm font-bold text-white shadow-[0_5px_0_0_rgba(0,0,0,0.35)] transition hover:brightness-105" />
         </div>
       </div>
     </header>

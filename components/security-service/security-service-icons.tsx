@@ -62,6 +62,25 @@ export function EmailIcon({ className }: IconProps) {
   );
 }
 
+export function UserIcon({ className }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      fill="none"
+      className={className}
+    >
+      <circle cx="10" cy="6.25" r="3" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M4.75 16.25c.88-2.31 2.95-3.75 5.25-3.75s4.37 1.44 5.25 3.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function PhoneIcon({ className }: IconProps) {
   return (
     <svg

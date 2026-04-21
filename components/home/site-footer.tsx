@@ -13,7 +13,7 @@ import {
   LocationIcon,
   MailIcon,
   PhoneIcon,
-  XIcon,
+  TikTokIcon,
 } from "./home-icons";
 
 const footerLinkHrefMap: Record<string, string> = {
@@ -28,7 +28,7 @@ const footerLinkHrefMap: Record<string, string> = {
 const socialIconMap = {
   Facebook: FacebookIcon,
   Instagram: InstagramIcon,
-  X: XIcon,
+  TikTok: TikTokIcon,
   LinkedIn: LinkedInIcon,
 } as const;
 

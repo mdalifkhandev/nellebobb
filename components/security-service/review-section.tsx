@@ -4,17 +4,30 @@ import { reviews } from "./security-service-data";
 
 function StarIcon() {
   return (
-    <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4 fill-[#f6a800]">
+    <svg
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      className="h-4 w-4 fill-[#f6a800]"
+    >
       <path d="M10 1.5l2.59 5.25 5.79.84-4.19 4.08.99 5.76L10 14.7l-5.18 2.73.99-5.76L1.62 7.59l5.79-.84L10 1.5z" />
     </svg>
   );
 }
 
-const avatarColors = ["bg-[#0ea5e9]", "bg-[#f97316]", "bg-[#10b981]", "bg-[#f59e0b]", "bg-[#111827]"];
+const avatarColors = [
+  "bg-[#0ea5e9]",
+  "bg-[#f97316]",
+  "bg-[#10b981]",
+  "bg-[#f59e0b]",
+  "bg-[#111827]",
+];
 
 export function ReviewSection() {
   return (
-    <section id="customer-review" className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+    <section
+      id="customer-review"
+      className="bg-[#f3f8f4] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8"
+    >
       <div className="mx-auto max-w-300">
         <div className="text-center">
           <h2 className="font-(family-name:--font-poppins) text-[clamp(1.85rem,4vw,2.9rem)] font-semibold leading-tight text-[#015555]">
@@ -27,7 +40,10 @@ export function ReviewSection() {
 
         <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
           {reviews.map((review, index) => (
-            <article key={review.name} className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+            <article
+              key={review.name}
+              className="rounded-2xl bg-white p-5 shadow-sm sm:p-6"
+            >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div
@@ -48,7 +64,9 @@ export function ReviewSection() {
                     </div>
                   </div>
                 </div>
-                <span className="shrink-0 pt-1 text-sm text-[#333]">{review.date}</span>
+                <span className="shrink-0 pt-1 text-sm text-[#333]">
+                  {review.date}
+                </span>
               </div>
               <p className="mt-4 max-w-270 text-[13px] leading-6 text-[#333] sm:text-[14px] sm:leading-7">
                 {review.text}
@@ -60,9 +78,9 @@ export function ReviewSection() {
         <div className="mt-10 text-center sm:mt-12">
           <Link
             href="/security-service#how-we-work"
-            className="shine-button inline-flex h-11 w-full max-w-105 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
+            className="shine-button inline-flex h-11 w-full max-w-105 items-center justify-center rounded-lg bg-[#123D7A] px-6 font-(family-name:--font-public-sans) text-xs font-bold text-white shadow-[0_8px_22px_-12px_rgba(11,168,221,0.9)] sm:h-12 sm:text-[14px]"
           >
-            Get Quotes from Security Services
+            Get Quote for a Service
           </Link>
         </div>
       </div>

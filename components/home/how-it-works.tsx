@@ -16,7 +16,10 @@ export function HowItWorks() {
 
   return (
     <>
-      <section id="how-we-work" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section
+        id="how-we-work"
+        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+      >
         <SectionHeading
           title="How we work"
           subtitle="A simple path from search to service, designed to keep the process quick and clear."
@@ -43,16 +46,19 @@ export function HowItWorks() {
                 <h3 className="mt-5 text-base font-semibold text-[#015555] sm:text-lg">
                   {index + 1}. {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {step.description}
+                </p>
               </article>
             );
           })}
         </div>
 
         <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-7 text-slate-600 sm:text-base">
-          First time looking for a Security Service and not sure where to start? Tell us about your project and
-          we&apos;ll send you a list of Security Services to review. There&apos;s no pressure to hire, so you
-          can compare profiles, read previous reviews and ask for more information before you make your decision.
+          First time here and not sure where to start? Tell us about your
+          project and we'll connect you to the right representative. There's no
+          pressure to hire, read previous reviews and ask for more informatin
+          before your decision.
         </p>
 
         <div className="mt-6 text-center sm:mt-8">
@@ -62,14 +68,17 @@ export function HowItWorks() {
           <button
             type="button"
             onClick={() => setWizardOpen(true)}
-            className="shine-button mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-lg bg-[linear-gradient(169.66deg,#0ba8dd_4.49%,#60d8ff_27.57%,#0ba8dd_56.04%)] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
+            className="shine-button mx-auto mt-3 inline-flex h-11 items-center justify-center rounded-lg bg-[#123D7A] px-6 font-(family-name:--font-public-sans) text-xs font-bold tracking-[0.016em] text-white transition hover:brightness-105 sm:h-12 sm:px-8 sm:text-[15px]"
           >
-            Get Quotes from Security Services
+            Request a Service
           </button>
         </div>
       </section>
 
-      <SecurityServiceWizardModal open={wizardOpen} onClose={() => setWizardOpen(false)} />
+      <SecurityServiceWizardModal
+        open={wizardOpen}
+        onClose={() => setWizardOpen(false)}
+      />
       <EmailAdminModal open={emailOpen} onClose={() => setEmailOpen(false)} />
     </>
   );
