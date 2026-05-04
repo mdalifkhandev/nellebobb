@@ -47,7 +47,7 @@ export function SecurityServiceWizardShell({
       </div>
 
       <div className={`${centerContent ? "my-auto" : "mt-6 sm:mt-7"} text-center`}>
-        <h1 className="font-(family-name:--font-inter) text-[clamp(1.75rem,4vw,2rem)] font-normal leading-[1.08] tracking-[-0.01em] text-[#015555]">
+        <h1 className="font-(family-name:--font-inter) text-blue-500 text-4xl font-normal leading-[1.08] tracking-[-0.01em] text-[#015555]">
           {title}
         </h1>
         {subtitle ? (

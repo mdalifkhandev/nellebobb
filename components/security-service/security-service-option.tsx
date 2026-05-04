@@ -12,8 +12,8 @@ export function SecurityServiceOption({ label, selected, onClick }: SecurityServ
       className={[
         "shine-button flex h-12 w-full items-center gap-3 rounded-md border px-3 py-3 text-left text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015555]/30",
         selected
-          ? "border-[#54d7d2] bg-[linear-gradient(135deg,#0b7f82_0%,#015555_100%)]"
-          : "border-[#0a6d6b] bg-[linear-gradient(135deg,#11888b_0%,#015555_100%)] hover:bg-[linear-gradient(135deg,#14979a_0%,#026362_100%)]",
+          ? "border-[#54d7d2] bg-yellow-800"
+          : "border-[#0a6d6b] bg-blue-900 hover:bg-blue-300",
       ].join(" ")}
     >
       <span

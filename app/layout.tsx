@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased" data-scroll-behavior="smooth">
-      <body className="min-h-full bg-[var(--background)] text-[var(--foreground)]">
+      <body suppressHydrationWarning className="min-h-full bg-[var(--background)] text-[var(--foreground)]">
         {children}
       </body>
     </html>

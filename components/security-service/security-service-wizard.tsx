@@ -187,7 +187,7 @@ export function SecurityServiceWizard({ onClose }: SecurityServiceWizardProps) {
                   }
                 }}
                 disabled={isSubmitting}
-                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-37.5" : "sm:min-w-25.5"} bg-[linear-gradient(149.405deg,#0ba8dd_4.4863%,#60d8ff_27.566%,#0ba8dd_56.038%)] px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 sm:px-6`}
+                className={`${ACTION_BUTTON_BASE} ${step.kind === "input" ? "sm:min-w-37.5" : "sm:min-w-25.5"} bg-yellow-800 px-5 shadow-[0_10px_24px_-14px_rgba(11,168,221,0.9)] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70 sm:px-6`}
               >
                 {primaryAction}
               </button>
